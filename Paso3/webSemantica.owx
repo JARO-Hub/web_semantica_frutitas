@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.mi-ontologia-frutas.org/ontologia"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.mi-ontologia-frutas.org/ontologia">
+    <Prefix name="" IRI="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Acido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Almacenamiento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aroma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Baya"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Citrico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clima"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coccion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cosecha"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crudo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cultivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deshidratación"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exotico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Familia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fermentación"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fibra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fitonutriente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frutas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Geografia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hueso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humedad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indice_glucemico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Invierno"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maduración"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MetodoDeCultivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mineral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nutricion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Otoño"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pepa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Primavera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sabor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperatura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TipoDeFamilia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tropical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UsoCulinario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Verano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vitamina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#textura"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Acido"/>
+        <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Almacenamiento"/>
+        <Class IRI="#Cultivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aroma"/>
+        <Class IRI="#Frutas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Baya"/>
+        <Class IRI="#TipoDeFamilia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Citrico"/>
+        <Class IRI="#TipoDeFamilia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clima"/>
+        <Class IRI="#Geografia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coccion"/>
+        <Class IRI="#UsoCulinario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Color"/>
+        <Class IRI="#Frutas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cosecha"/>
+        <Class IRI="#Cultivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crudo"/>
+        <Class IRI="#UsoCulinario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deshidratación"/>
+        <Class IRI="#UsoCulinario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estacion"/>
+        <Class IRI="#Clima"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Exotico"/>
+        <Class IRI="#TipoDeFamilia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fermentación"/>
+        <Class IRI="#UsoCulinario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fibra"/>
+        <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fitonutriente"/>
+        <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hueso"/>
+        <Class IRI="#TipoDeFamilia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humedad"/>
+        <Class IRI="#Clima"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Indice_glucemico"/>
+        <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Invierno"/>
+        <Class IRI="#Estacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maduración"/>
+        <Class IRI="#UsoCulinario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MetodoDeCultivo"/>
+        <Class IRI="#Cultivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mineral"/>
+        <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Otoño"/>
+        <Class IRI="#Estacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pepa"/>
+        <Class IRI="#TipoDeFamilia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Primavera"/>
+        <Class IRI="#Estacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sabor"/>
+        <Class IRI="#Frutas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperatura"/>
+        <Class IRI="#Clima"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TipoDeFamilia"/>
+        <Class IRI="#Familia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tropical"/>
+        <Class IRI="#TipoDeFamilia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Verano"/>
+        <Class IRI="#Estacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vitamina"/>
+        <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#textura"/>
+        <Class IRI="#Frutas"/>
+    </SubClassOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
