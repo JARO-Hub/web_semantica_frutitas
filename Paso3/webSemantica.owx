@@ -19,6 +19,9 @@
         <Class IRI="#Almacenamiento"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Altitud"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Aroma"/>
     </Declaration>
     <Declaration>
@@ -31,34 +34,22 @@
         <Class IRI="#Clima"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Coccion"/>
+        <Class IRI="#Color"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Color"/>
+        <Class IRI="#Continente"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Cosecha"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Crudo"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Cultivo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Deshidratación"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Estacion"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Exotico"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Familia"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fermentación"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Fibra"/>
@@ -70,9 +61,6 @@
         <Class IRI="#Frutas"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Geografia"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Hueso"/>
     </Declaration>
     <Declaration>
@@ -80,12 +68,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Indice_glucemico"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Invierno"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Maduración"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MetodoDeCultivo"/>
@@ -97,16 +79,13 @@
         <Class IRI="#Nutricion"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Otoño"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Pepa"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Primavera"/>
+        <Class IRI="#Sabor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Sabor"/>
+        <Class IRI="#SituacionGeografica"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Temperatura"/>
@@ -121,13 +100,70 @@
         <Class IRI="#UsoCulinario"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Verano"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Vitamina"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#manera_de"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#textura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Acido"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Altitud"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Aroma"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Clima"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Conservacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Continente"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Fibra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Fitonutriente"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Humedad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#IndiceGlucemico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MetodoDeCultivo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Mineral"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Sabor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Temperatura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TipoDe"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Vitamina"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maneraDe"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#textura"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Acido"/>
@@ -138,6 +174,10 @@
         <Class IRI="#Cultivo"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Altitud"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Aroma"/>
         <Class IRI="#Frutas"/>
     </SubClassOf>
@@ -151,39 +191,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Clima"/>
-        <Class IRI="#Geografia"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Coccion"/>
-        <Class IRI="#UsoCulinario"/>
+        <Class IRI="#SituacionGeografica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Color"/>
         <Class IRI="#Frutas"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Continente"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Cosecha"/>
         <Class IRI="#Cultivo"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Crudo"/>
-        <Class IRI="#UsoCulinario"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Deshidratación"/>
-        <Class IRI="#UsoCulinario"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Estacion"/>
-        <Class IRI="#Clima"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Exotico"/>
         <Class IRI="#TipoDeFamilia"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Fermentación"/>
-        <Class IRI="#UsoCulinario"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Fibra"/>
@@ -199,19 +223,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Humedad"/>
-        <Class IRI="#Clima"/>
+        <Class IRI="#SituacionGeografica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Indice_glucemico"/>
         <Class IRI="#Nutricion"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Invierno"/>
-        <Class IRI="#Estacion"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Maduración"/>
-        <Class IRI="#UsoCulinario"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MetodoDeCultivo"/>
@@ -222,16 +238,8 @@
         <Class IRI="#Nutricion"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Otoño"/>
-        <Class IRI="#Estacion"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Pepa"/>
         <Class IRI="#TipoDeFamilia"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Primavera"/>
-        <Class IRI="#Estacion"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sabor"/>
@@ -239,7 +247,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Temperatura"/>
-        <Class IRI="#Clima"/>
+        <Class IRI="#SituacionGeografica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TipoDeFamilia"/>
@@ -250,17 +258,169 @@
         <Class IRI="#TipoDeFamilia"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Verano"/>
-        <Class IRI="#Estacion"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Vitamina"/>
         <Class IRI="#Nutricion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#manera_de"/>
+        <Class IRI="#UsoCulinario"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#textura"/>
         <Class IRI="#Frutas"/>
     </SubClassOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Acido"/>
+        <Class IRI="#Nutricion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Altitud"/>
+        <Class IRI="#SituacionGeografica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Aroma"/>
+        <Class IRI="#Frutas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Clima"/>
+        <Class IRI="#SituacionGeografica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Color"/>
+        <Class IRI="#Frutas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Conservacion"/>
+        <Class IRI="#Cultivo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Continente"/>
+        <Class IRI="#SituacionGeografica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Fibra"/>
+        <Class IRI="#Nutricion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Fitonutriente"/>
+        <Class IRI="#Nutricion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Humedad"/>
+        <Class IRI="#SituacionGeografica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <Class IRI="#Nutricion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MetodoDeCultivo"/>
+        <Class IRI="#Cultivo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Mineral"/>
+        <Class IRI="#Nutricion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Sabor"/>
+        <Class IRI="#Frutas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Temperatura"/>
+        <Class IRI="#SituacionGeografica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TipoDe"/>
+        <Class IRI="#Familia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Vitamina"/>
+        <Class IRI="#Nutricion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maneraDe"/>
+        <Class IRI="#UsoCulinario"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#textura"/>
+        <Class IRI="#Frutas"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Acido"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Altitud"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Aroma"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Clima"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Color"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Conservacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Continente"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Fibra"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Fitonutriente"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Humedad"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MetodoDeCultivo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Mineral"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Sabor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Temperatura"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#TipoDe"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Vitamina"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maneraDe"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#textura"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
 </Ontology>
 
 
