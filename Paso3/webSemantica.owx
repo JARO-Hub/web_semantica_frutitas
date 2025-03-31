@@ -40,9 +40,6 @@
         <Class IRI="#Continente"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cosecha"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Cultivo"/>
     </Declaration>
     <Declaration>
@@ -82,6 +79,9 @@
         <Class IRI="#Pepa"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Preparacion"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Sabor"/>
     </Declaration>
     <Declaration>
@@ -97,16 +97,52 @@
         <Class IRI="#Tropical"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#UsoCulinario"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Vitamina"/>
     </Declaration>
     <Declaration>
         <Class IRI="#manera_de"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#nombreClima"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#textura"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cultivaFruta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esFamiliaDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esNutricionDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esUsoCulinarioDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requierePreparacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seLocaliza"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seLocalizaLaFruta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seRealizaCultivo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seRealizaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneCultivo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneFamilia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneNutricion"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Acido"/>
@@ -202,10 +238,6 @@
         <Class IRI="#SituacionGeografica"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Cosecha"/>
-        <Class IRI="#Cultivo"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Exotico"/>
         <Class IRI="#TipoDeFamilia"/>
     </SubClassOf>
@@ -263,12 +295,160 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#manera_de"/>
-        <Class IRI="#UsoCulinario"/>
+        <Class IRI="#Preparacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nombreClima"/>
+        <Class IRI="#Clima"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#textura"/>
         <Class IRI="#Frutas"/>
     </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cultivaFruta"/>
+        <ObjectProperty IRI="#tieneCultivo"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#esFamiliaDe"/>
+        <ObjectProperty IRI="#tieneFamilia"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#esNutricionDe"/>
+        <ObjectProperty IRI="#tieneNutricion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#esUsoCulinarioDe"/>
+        <ObjectProperty IRI="#requierePreparacion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <ObjectProperty IRI="#seLocalizaLaFruta"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#seRealizaCultivo"/>
+        <ObjectProperty IRI="#seRealizaEn"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#requierePreparacion"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#tieneCultivo"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#tieneFamilia"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#tieneNutricion"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#cultivaFruta"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#esFamiliaDe"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#esNutricionDe"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#esUsoCulinarioDe"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cultivaFruta"/>
+        <Class IRI="#Cultivo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esFamiliaDe"/>
+        <Class IRI="#Familia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esNutricionDe"/>
+        <Class IRI="#Nutricion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esUsoCulinarioDe"/>
+        <Class IRI="#Preparacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requierePreparacion"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seLocalizaLaFruta"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seRealizaCultivo"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <Class IRI="#Cultivo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneCultivo"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#cultivaFruta"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esFamiliaDe"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esNutricionDe"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esUsoCulinarioDe"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requierePreparacion"/>
+        <Class IRI="#Preparacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seLocalizaLaFruta"/>
+        <Class IRI="#Frutas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seRealizaCultivo"/>
+        <Class IRI="#Cultivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneCultivo"/>
+        <Class IRI="#Cultivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <Class IRI="#Familia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <Class IRI="#Nutricion"/>
+    </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#Acido"/>
         <Class IRI="#Nutricion"/>
@@ -339,7 +519,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#maneraDe"/>
-        <Class IRI="#UsoCulinario"/>
+        <Class IRI="#Preparacion"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#textura"/>
@@ -421,6 +601,11 @@
         <DataProperty IRI="#textura"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tieneFamilia</IRI>
+        <Literal>trelacion entre fruta y familia</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
