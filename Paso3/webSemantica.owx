@@ -202,6 +202,9 @@
         <DataProperty IRI="#textura"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Coco"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#LimonSinPepa"/>
     </Declaration>
     <Declaration>
@@ -317,6 +320,10 @@
         <Class IRI="#textura"/>
         <Class IRI="#Frutas"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#Coco"/>
+    </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Frutas"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
