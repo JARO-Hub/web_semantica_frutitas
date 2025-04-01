@@ -201,6 +201,18 @@
     <Declaration>
         <DataProperty IRI="#textura"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mexico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Acido"/>
         <Class IRI="#Nutricion"/>
@@ -305,6 +317,82 @@
         <Class IRI="#textura"/>
         <Class IRI="#Frutas"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFamilia"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <Literal>verde</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <Literal>Agrio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <Literal>fibrosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Altitud"/>
+        <NamedIndividual IRI="#Mexico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2240.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Clima"/>
+        <NamedIndividual IRI="#Mexico"/>
+        <Literal>Tropical</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Continente"/>
+        <NamedIndividual IRI="#Mexico"/>
+        <Literal>America</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+        <Literal>VitaminaC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+        <Literal>Rutaceae</Literal>
+    </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#cultivaFruta"/>
         <ObjectProperty IRI="#tieneCultivo"/>
