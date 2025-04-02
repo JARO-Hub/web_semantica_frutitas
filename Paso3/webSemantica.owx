@@ -379,7 +379,7 @@
         <NamedIndividual IRI="#Rosaceae"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Familia"/>
+        <Class IRI="#TipoDeFamilia"/>
         <NamedIndividual IRI="#Rutaceae"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
@@ -460,7 +460,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#Temperatura"/>
         <NamedIndividual IRI="#Argentina"/>
-        <Literal>13C y 25C</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">13.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Aroma"/>
@@ -525,7 +525,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#Temperatura"/>
         <NamedIndividual IRI="#Mexico"/>
-        <Literal>25 C y 30 C</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">27.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Aroma"/>
@@ -925,7 +925,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#Temperatura"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#TipoDe"/>
