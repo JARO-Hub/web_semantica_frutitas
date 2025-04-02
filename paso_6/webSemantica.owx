@@ -12,6 +12,7 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
     <Declaration>
         <Class IRI="#Acido"/>
     </Declaration>
@@ -209,6 +210,33 @@
     </Declaration>
      <Declaration>
         <NamedIndividual IRI="#Argentina"/>
+     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Achachairu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BananaCavendish"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BayaInst"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClimaTemplado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Copoazu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Frutilla"/>
@@ -229,10 +257,31 @@
         <NamedIndividual IRI="#Mora"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ManeraComerCrudo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mexico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutricionAchachairu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutricionBananaCavendish"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutricionCopoazu"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#NutricionFrutilla"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#PreparacionManzana"/>
@@ -360,6 +409,42 @@
         <Class IRI="#Frutas"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#Achachairu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFamilia"/>
+        <NamedIndividual IRI="#BayaInst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Clima"/>
+        <NamedIndividual IRI="#ClimaTemplado"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#Copoazu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cultivo"/>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cultivo"/>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cultivo"/>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFamilia"/>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#SituacionGeografica"/>
         <NamedIndividual IRI="#China"/>
     </ClassAssertion>
@@ -378,6 +463,26 @@
     <ClassAssertion>
         <Class IRI="#Frutas"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#manera_de"/>
+        <NamedIndividual IRI="#ManeraComerCrudo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#NutricionAchachairu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#NutricionBananaCavendish"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#NutricionCopoazu"/>
     </ClassAssertion>
     <ClassAssertion>
             <Class IRI="#Preparacion"/>
@@ -404,6 +509,14 @@
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Preparacion"/>
         <NamedIndividual IRI="#PreparacionManzana"/>
     </ClassAssertion>
@@ -423,6 +536,66 @@
         <Class IRI="#TipoDeFamilia"/>
         <NamedIndividual IRI="#Rutaceae"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requierePreparacion"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <NamedIndividual IRI="#ManeraComerCrudo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneCultivo"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <NamedIndividual IRI="#NutricionAchachairu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+        <NamedIndividual IRI="#NutricionBananaCavendish"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneCultivo"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <NamedIndividual IRI="#NutricionCopoazu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requierePreparacion"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <NamedIndividual IRI="#ManeraComerCrudo"/>
+    </ObjectPropertyAssertion>
     <ClassAssertion>
             <Class IRI="#Nutricion"/>
             <NamedIndividual IRI="#ValorNutricionalGranada"/>
@@ -451,21 +624,26 @@
                 <NamedIndividual IRI="#Frutilla"/>
                 <NamedIndividual IRI="#Mermelada"/>
             </ObjectPropertyAssertion>
-            <ObjectPropertyAssertion>
-                <ObjectProperty IRI="#seLocaliza"/>
-                <NamedIndividual IRI="#Frutilla"/>
-                <NamedIndividual IRI="#Argentina"/>
-            </ObjectPropertyAssertion>
-            <ObjectPropertyAssertion>
-                <ObjectProperty IRI="#tieneFamilia"/>
-                <NamedIndividual IRI="#Frutilla"/>
-                <NamedIndividual IRI="#Rosaceae"/>
-            </ObjectPropertyAssertion>
-            <ObjectPropertyAssertion>
-                <ObjectProperty IRI="#tieneNutricion"/>
-                <NamedIndividual IRI="#Frutilla"/>
-                <NamedIndividual IRI="#NutricionFrutilla"/>
-            </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <NamedIndividual IRI="#ClimaTemplado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneCultivo"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <NamedIndividual IRI="#BayaInst"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <NamedIndividual IRI="#NutricionFrutilla"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#seLocaliza"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -481,6 +659,96 @@
         <NamedIndividual IRI="#LimonSinPepa"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <Literal>naranja claro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <Literal>dulce, acido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <Literal>firme, jugosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+        <Literal>amarillo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+        <Literal>dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+        <Literal>cremosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#BayaInst"/>
+        <Literal>baya</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Clima"/>
+        <NamedIndividual IRI="#ClimaTemplado"/>
+        <Literal>templado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <Literal>marron</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <Literal>dulce,acido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#Copoazu"/>
+        <Literal>pulposa, cremosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Conservacion"/>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+        <Literal>Se mantiene fresco, refrigeración ligera</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeCultivo"/>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+        <Literal>Técnicas de cultivo tropical en Santa Cruz</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Conservacion"/>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+        <Literal>En pulpa refrigerada tras la cosecha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeCultivo"/>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+        <Literal>Monocultivo tropical en suelos amazónicos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Conservacion"/>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
+        <Literal>refrigeracion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeCultivo"/>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
+        <Literal>cultivo tradicional al aire libre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+        <Literal>tropical</Literal>
+    </DataPropertyAssertion>
     <ObjectPropertyAssertion>
             <ObjectProperty IRI="#requierePreparacion"/>
             <NamedIndividual IRI="#Manzana"/>
@@ -576,21 +844,21 @@
                 <NamedIndividual IRI="#Frutilla"/>
                 <Literal>Dulce</Literal>
             </DataPropertyAssertion>
-            <DataPropertyAssertion>
-                <DataProperty IRI="#Color"/>
-                <NamedIndividual IRI="#Frutilla"/>
-                <Literal>rojo</Literal>
-            </DataPropertyAssertion>
-            <DataPropertyAssertion>
-                <DataProperty IRI="#Sabor"/>
-                <NamedIndividual IRI="#Frutilla"/>
-                <Literal>Acido</Literal>
-            </DataPropertyAssertion>
-            <DataPropertyAssertion>
-                <DataProperty IRI="#textura"/>
-                <NamedIndividual IRI="#Frutilla"/>
-                <Literal>jugosa</Literal>
-            </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <Literal>rojo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <Literal>dulce-acidulado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#Frutilla"/>
+        <Literal>suave</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Color"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -645,6 +913,61 @@
         <DataProperty IRI="#Continente"/>
         <NamedIndividual IRI="#Mexico"/>
         <Literal>America</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionAchachairu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <NamedIndividual IRI="#NutricionAchachairu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">35</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#NutricionAchachairu"/>
+        <Literal>vitaminaC, vitaminaB1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionBananaCavendish"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <NamedIndividual IRI="#NutricionBananaCavendish"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">51</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#NutricionBananaCavendish"/>
+        <Literal>vitaminaB6, vitaminaC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionCopoazu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <NamedIndividual IRI="#NutricionCopoazu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">48</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#NutricionCopoazu"/>
+        <Literal>vitaminaC, B1, B2, B3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionFrutilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <NamedIndividual IRI="#NutricionFrutilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">40</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Humedad"/>
@@ -704,7 +1027,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#Vitamina"/>
         <NamedIndividual IRI="#NutricionFrutilla"/>
-        <Literal>VitaminaC</Literal>
+        <Literal>vitaminaC</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Acido"/>
@@ -714,7 +1037,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#Fibra"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
-        <Literal>Fibra Soluble</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Fitonutriente"/>
@@ -735,6 +1058,31 @@
         <DataProperty IRI="#Vitamina"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
         <Literal>VitaminaC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Clima"/>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+        <Literal>Selva Humeda</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Humedad"/>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">85</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Altitud"/>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">416</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Clima"/>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
+        <Literal>TropicalHumedo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+        <Literal>Rutaceae</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Acido"/>
@@ -780,11 +1128,6 @@
         <DataProperty IRI="#TipoDe"/>
         <NamedIndividual IRI="#Punicaceae"/>
         <Literal>Punicaceae</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#TipoDe"/>
-        <NamedIndividual IRI="#Rutaceae"/>
-        <Literal>Rutaceae</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Fibra"/>
