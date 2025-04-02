@@ -1,0 +1,36 @@
+name: frutas_jefa.yml
+on:
+  push:
+    branches: [ "main" ]
+    pull_request:
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar dependencias
+        run: |
+          # Aquí instalas lo que necesites
+          # Para un .owl puede que no necesites nada, pero
+          # en el futuro para Angular será "npm install && npm run build"
+          echo "Instalando... Team DeploymentSoftware - Ontologia Frutas"
+      - name: Correr pruebas
+        run: |
+          echo "Probando..."
+
+  deploy:
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Copy to server
+        run: |
+          rsync -avz . ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
+      - name: Reload Nginx
+        run: |
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "sudo systemctl reload nginx"
