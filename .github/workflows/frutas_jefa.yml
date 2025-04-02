@@ -31,11 +31,18 @@ jobs:
       - name: Install rsync
         run: |
           sudo apt-get update
-          sudo apt-get install -y rsync
+          sudo apt-get install -y --reinstall rsync
+      - name: Check path
+        run: which rsync
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Debug rsync
+        run: |
+          which rsync || true
+          ls -l /usr/bin/rsync || true
+          /usr/bin/rsync --version || true
       - name: Copy to server
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" . \
