@@ -202,7 +202,16 @@
         <DataProperty IRI="#textura"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Arecaceae"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Coco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Indonesia"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -211,7 +220,16 @@
         <NamedIndividual IRI="#Mexico"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#NutricionCoco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NutricionDuraznoConPepa"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rosaceae"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Rutaceae"/>
@@ -321,8 +339,20 @@
         <Class IRI="#Frutas"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#Familia"/>
+        <NamedIndividual IRI="#Arecaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Frutas"/>
         <NamedIndividual IRI="#Coco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#Indonesia"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Frutas"/>
@@ -334,12 +364,49 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#NutricionCoco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#NutricionDuraznoConPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#Rosaceae"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#TipoDeFamilia"/>
         <NamedIndividual IRI="#Rutaceae"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esFamiliaDe"/>
+        <NamedIndividual IRI="#Coco"/>
+        <NamedIndividual IRI="#Coco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#Coco"/>
+        <NamedIndividual IRI="#Indonesia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#Coco"/>
+        <NamedIndividual IRI="#NutricionCoco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+        <NamedIndividual IRI="#Rosaceae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+        <NamedIndividual IRI="#NutricionDuraznoConPepa"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#seLocaliza"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -355,6 +422,56 @@
         <NamedIndividual IRI="#LimonSinPepa"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#Arecaceae"/>
+        <Literal>Arecaceae</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>marron</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>fibrosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+        <Literal>amarillento</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+        <Literal>dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+        <Literal>aterciopelada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Altitud"/>
+        <NamedIndividual IRI="#Indonesia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">4884.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Clima"/>
+        <NamedIndividual IRI="#Indonesia"/>
+        <Literal>calido y humedo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Continente"/>
+        <NamedIndividual IRI="#Indonesia"/>
+        <Literal>Asiatico</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Color"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -387,6 +504,26 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionCoco"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#NutricionCoco"/>
+        <Literal>B1,B2,C</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#NutricionDuraznoConPepa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#NutricionDuraznoConPepa"/>
+        <Literal>A, B1, B2, C, E y K</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.4</Literal>
     </DataPropertyAssertion>
@@ -394,6 +531,11 @@
         <DataProperty IRI="#Vitamina"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
         <Literal>VitaminaC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#Rosaceae"/>
+        <Literal>Rosaceae</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#TipoDe"/>
