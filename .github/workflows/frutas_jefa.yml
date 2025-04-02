@@ -27,7 +27,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ success() }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - name: Install rsync
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
