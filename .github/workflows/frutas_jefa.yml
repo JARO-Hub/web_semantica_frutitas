@@ -34,7 +34,8 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
       - name: Copy to server
         run: |
-          rsync -avz . ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no" . \
+              ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
       - name: Reload Nginx
         run: |
-          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "sudo nginx -T && sudo service nginx restart"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "sudo nginx -T && sudo service nginx restart"
