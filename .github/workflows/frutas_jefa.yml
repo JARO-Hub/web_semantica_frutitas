@@ -3,6 +3,10 @@ on:
   push:
     branches: [ "main" ]
     pull_request:
+
+concurrencia:
+  grupo: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -33,4 +37,4 @@ jobs:
           rsync -avz . ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
       - name: Reload Nginx
         run: |
-          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "sudo systemctl reload nginx"
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "sudo nginx -T && sudo service nginx restart"

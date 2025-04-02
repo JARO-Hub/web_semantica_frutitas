@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de presentación del equipo">
+    <title>Presentación del Equipo</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        /* Variables de colores */
+        :root {
+            --color-primario: #007BFF; /* Azul */
+            --color-secundario: #28A745; /* Verde */
+            --color-acento: #17A2B8; /* Turquesa */
+            --color-fondo: #E0F7FA; /* Celeste */
+            --bg-color: #1e1e2d
+        }
+
+        body {
+            background-color: var(--bg-color);
+        }
+        /* Bloque principal */
+        .team {
+            background-color: var(--color-fondo);
+            padding: 20px;
+        }
+
+        /* Elemento de encabezado */
+        .team__header {
+            text-align: center;
+            color: var(--color-primario);
+            margin-bottom: 20px;
+        }
+
+        /* Elemento de lista */
+        .team__list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        /* Elemento de miembro */
+        .team__member {
+            background-color: var(--color-secundario);
+            color: #fff;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+
+            text-align: center;
+            transition: transform 0.3s;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        /* Modificador para resaltar */
+        .team__member--highlight {
+            background-color: var(--color-acento);
+        }
+
+        /* Estado al pasar el mouse */
+        .team__member:hover {
+            transform: scale(1.05);
+
+        }
+
+        /* Estilo para el contenedor del documento */
+        .document-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .fs-4 {
+            font-size: 2rem;
+        }
+
+        .fs-6 {
+            font-size: 1.5rem;
+        }
+
+        .team__member--primary {
+            background-color: var(--color-primario);
+            color: var(--color-fondo);
+        }
+
+        .team__member--active {
+            font-size: 1rem;
+            color: #FCC80BFF;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Bloque del equipo -->
+    <section class="team">
+        <!-- Elemento de encabezado -->
+        <h1 class="team__header">Conoce a Nuestro Equipo</h1>
+        <!-- Elemento de lista -->
+        <ul class="team__list">
+            <!-- Elementos de miembro -->
+            <li class="team__member">Bermúdez Torrico Viviana Laura</li>
+            <li class="team__member">Fernandez Aguilar Kevin</li>
+            <li class="team__member fs-6 team__member--primary">Flores Escobar Adalia <br> <p class="team__member--active">Jefa</p></li>
+            <li class="team__member">Jesús Gutiérrez Jose Erick</li>
+            <li class="team__member">Leyva Adrian Anabel</li>
+            <li class="team__member ">Rodriguez Ortiz Julian Angel</li>
+        </ul>
+    </section>
+
+    <!-- Incrustación del documento -->
+    <iframe src="https://docs.google.com/document/d/1jJ-sKqZhGJAROwoa7GWUYboWBoZqneFUEWQsQwhu9Jw/edit?usp=sharing" class="document-viewer"></iframe>
+</div>
+
+<!-- Enlace a jQuery y Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+
+    function mostrarMensaje(mensaje) {
+        console.log(mensaje);
+    }
+
+    // Llamada a la función
+    mostrarMensaje('Página cargada correctamente.');
+</script>
+</body>
+</html>
