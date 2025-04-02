@@ -202,7 +202,16 @@
         <DataProperty IRI="#textura"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#China"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Granada"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#LimonSinPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Manzana"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Mexico"/>
@@ -211,7 +220,19 @@
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#PreparacionManzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Punicaceae"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Rutaceae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Acido"/>
@@ -318,8 +339,20 @@
         <Class IRI="#Frutas"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#China"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#Granada"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Frutas"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Frutas"/>
+        <NamedIndividual IRI="#Manzana"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#SituacionGeografica"/>
@@ -330,9 +363,40 @@
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Preparacion"/>
+        <NamedIndividual IRI="#PreparacionManzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFamilia"/>
+        <NamedIndividual IRI="#Punicaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#TipoDeFamilia"/>
         <NamedIndividual IRI="#Rutaceae"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nutricion"/>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#Granada"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneFamilia"/>
+        <NamedIndividual IRI="#Granada"/>
+        <NamedIndividual IRI="#Punicaceae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#Granada"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#seLocaliza"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -348,6 +412,51 @@
         <NamedIndividual IRI="#LimonSinPepa"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requierePreparacion"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <NamedIndividual IRI="#PreparacionManzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLocaliza"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <NamedIndividual IRI="#China"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneNutricion"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Altitud"/>
+        <NamedIndividual IRI="#China"/>
+        <Literal>4,500 metros</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Clima"/>
+        <NamedIndividual IRI="#China"/>
+        <Literal>templado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Continente"/>
+        <NamedIndividual IRI="#China"/>
+        <Literal>asiático</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#Granada"/>
+        <Literal>Rojo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#Granada"/>
+        <Literal>Dulce con un toque ácido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#Granada"/>
+        <Literal>La cáscara es dura y gruesa, mientras que los arilos tienen una textura jugosa y crujiente debido a las semillas en su interior.</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Color"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
@@ -362,6 +471,26 @@
         <DataProperty IRI="#textura"/>
         <NamedIndividual IRI="#LimonSinPepa"/>
         <Literal>fibrosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Aroma"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <Literal>Fresco y afrutado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Color"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <Literal>rojo, verde, amarillo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Sabor"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <Literal>Dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#textura"/>
+        <NamedIndividual IRI="#Manzana"/>
+        <Literal>crujiente y jugosa</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Altitud"/>
@@ -389,9 +518,44 @@
         <Literal>VitaminaC</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#maneraDe"/>
+        <NamedIndividual IRI="#PreparacionManzana"/>
+        <Literal>Manzana Cocida</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipoDe"/>
+        <NamedIndividual IRI="#Punicaceae"/>
+        <Literal>Punicaceae</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#TipoDe"/>
         <NamedIndividual IRI="#Rutaceae"/>
         <Literal>Rutaceae</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+        <Literal>Vitamina C</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+        <Literal>Vitamina K</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fibra"/>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Vitamina"/>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
+        <Literal>Vitamina C, K.</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#cultivaFruta"/>
