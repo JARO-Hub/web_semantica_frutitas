@@ -229,9 +229,6 @@
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Rosaceae"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Rutaceae"/>
     </Declaration>
     <SubClassOf>
@@ -375,10 +372,6 @@
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Nutricion"/>
-        <NamedIndividual IRI="#Rosaceae"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#TipoDeFamilia"/>
         <NamedIndividual IRI="#Rutaceae"/>
     </ClassAssertion>
@@ -396,11 +389,6 @@
         <ObjectProperty IRI="#tieneNutricion"/>
         <NamedIndividual IRI="#Coco"/>
         <NamedIndividual IRI="#NutricionCoco"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#tieneFamilia"/>
-        <NamedIndividual IRI="#DuraznoConPepa"/>
-        <NamedIndividual IRI="#Rosaceae"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneNutricion"/>
@@ -531,11 +519,6 @@
         <DataProperty IRI="#Vitamina"/>
         <NamedIndividual IRI="#NutricionLimonSinPepa"/>
         <Literal>VitaminaC</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#TipoDe"/>
-        <NamedIndividual IRI="#Rosaceae"/>
-        <Literal>Rosaceae</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#TipoDe"/>
