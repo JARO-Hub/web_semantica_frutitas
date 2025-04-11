@@ -113,6 +113,9 @@
         <DataProperty IRI="#nombreCientifico"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#nombreTipoFruta"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#numeroIndiceGlucemico"/>
     </Declaration>
     <Declaration>
@@ -159,6 +162,15 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Copoazu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DuraznoConPepa"/>
@@ -356,9 +368,14 @@
         <NamedIndividual IRI="#Rutaceae"/>
     </ClassAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#altura_mts"/>
-        <NamedIndividual IRI="#Achachairu"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20.5</Literal>
+        <DataProperty IRI="#nombreCientifico"/>
+        <NamedIndividual IRI="#Punicaceae"/>
+        <Literal>Punicaceae</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombreTipoFruta"/>
+        <NamedIndividual IRI="#Punicaceae"/>
+        <Literal>Adalia</Literal>
     </DataPropertyAssertion>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#seCultivaPor"/>
@@ -472,6 +489,10 @@
         <Class IRI="#Familia"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#nombreTipoFruta"/>
+        <Class IRI="#TipoDeFruto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#numeroIndiceGlucemico"/>
         <Class IRI="#Indice_glucemico"/>
     </DataPropertyDomain>
@@ -524,6 +545,10 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#nombreTipoFruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#numeroIndiceGlucemico"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
@@ -551,6 +576,11 @@
         <DataProperty IRI="#tienePulpa"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nombreTipoFruta</IRI>
+        <Literal>Este es el nombre para un tipo de fruta, xsd:string</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
