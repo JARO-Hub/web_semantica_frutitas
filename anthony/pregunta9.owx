@@ -146,6 +146,9 @@
         <DataProperty IRI="#texturaDeFruta"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#tiempoDePreparacion"/>
     </Declaration>
     <Declaration>
@@ -174,6 +177,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Pomelo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mermelada"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Acido"/>
@@ -247,10 +253,19 @@
         <Class IRI="#Fruta"/>
         <NamedIndividual IRI="#Pomelo"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preparacion"/>
+        <NamedIndividual IRI="#mermelada"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTemporada"/>
         <NamedIndividual IRI="#GuayabaRoja"/>
         <NamedIndividual IRI="#Invierno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+        <NamedIndividual IRI="#mermelada"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTemporada"/>
@@ -371,6 +386,16 @@
         <DataProperty IRI="#texturaDeFruta"/>
         <NamedIndividual IRI="#Pomelo"/>
         <Literal>Jugosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+        <NamedIndividual IRI="#mermelada"/>
+        <Literal>3 meses</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+        <NamedIndividual IRI="#mermelada"/>
+        <Literal>1 hora</Literal>
     </DataPropertyAssertion>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#seCultivaPor"/>
@@ -528,6 +553,10 @@
         <Class IRI="#Fruta"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+        <Class IRI="#Preparacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#tiempoDePreparacion"/>
         <Class IRI="#Preparacion"/>
     </DataPropertyDomain>
@@ -604,8 +633,12 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#tiempoDePreparacion"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#tieneFlores"/>
