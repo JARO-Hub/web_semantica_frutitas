@@ -155,16 +155,13 @@
         <DataProperty IRI="#tienePulpa"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Achachairu"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#GuayabaRoja"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Invierno"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ManzanaRoja"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Otoño"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Pera"/>
@@ -222,19 +219,15 @@
     </SubClassOf>
     <ClassAssertion>
         <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Achachairu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
         <NamedIndividual IRI="#GuayabaRoja"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Estacion"/>
         <NamedIndividual IRI="#Invierno"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Fruta"/>
-        <NamedIndividual IRI="#ManzanaRoja"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Estacion"/>
-        <NamedIndividual IRI="#Otoño"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Fruta"/>
@@ -251,11 +244,6 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTemporada"/>
-        <NamedIndividual IRI="#ManzanaRoja"/>
-        <NamedIndividual IRI="#Otoño"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#tieneTemporada"/>
         <NamedIndividual IRI="#Pera"/>
         <NamedIndividual IRI="#Invierno"/>
     </ObjectPropertyAssertion>
@@ -264,6 +252,11 @@
         <NamedIndividual IRI="#Pomelo"/>
         <NamedIndividual IRI="#Invierno"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#altura_mts"/>
+        <NamedIndividual IRI="#Achachairu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20.5</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#colorDeFruta"/>
         <NamedIndividual IRI="#GuayabaRoja"/>
@@ -298,41 +291,6 @@
         <DataProperty IRI="#terminaMes"/>
         <NamedIndividual IRI="#Invierno"/>
         <Literal>Julio</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#colorDeFruta"/>
-        <NamedIndividual IRI="#ManzanaRoja"/>
-        <Literal>Rojo</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#saborDefruta"/>
-        <NamedIndividual IRI="#ManzanaRoja"/>
-        <Literal>Dulce</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#texturaDeFruta"/>
-        <NamedIndividual IRI="#ManzanaRoja"/>
-        <Literal>Crujiente</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#duracionEnMes"/>
-        <NamedIndividual IRI="#Otoño"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#empiezaEnMes"/>
-        <NamedIndividual IRI="#Otoño"/>
-        <Literal>Agosto</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#nombreEstacion"/>
-        <NamedIndividual IRI="#Otoño"/>
-        <Literal>Otoño</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#terminaMes"/>
-        <NamedIndividual IRI="#Otoño"/>
-        <Literal>Noviembre</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#colorDeFruta"/>
