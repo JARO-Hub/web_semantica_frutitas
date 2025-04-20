@@ -167,6 +167,9 @@
         <DataProperty IRI="#tieneVitamina"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Coco"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#FortalecimientoDelSistemaInmunologico"/>
     </Declaration>
     <Declaration>
@@ -195,6 +198,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Pomelo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Verano"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#mermelada"/>
@@ -248,6 +254,10 @@
         <Class IRI="#PropiedadNutricional"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Coco"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#PropiedadNutricional"/>
         <NamedIndividual IRI="#FortalecimientoDelSistemaInmunologico"/>
     </ClassAssertion>
@@ -288,9 +298,18 @@
         <NamedIndividual IRI="#Pomelo"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Estacion"/>
+        <NamedIndividual IRI="#Verano"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Preparacion"/>
         <NamedIndividual IRI="#mermelada"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <NamedIndividual IRI="#Coco"/>
+        <NamedIndividual IRI="#Verano"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#contribuyeAl"/>
         <NamedIndividual IRI="#Fresa"/>
@@ -299,6 +318,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#esUsadaEn"/>
         <NamedIndividual IRI="#Fresa"/>
+        <NamedIndividual IRI="#mermelada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
         <NamedIndividual IRI="#mermelada"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -332,6 +356,11 @@
         <NamedIndividual IRI="#FortalecimientoDelSistemaInmunologico"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <NamedIndividual IRI="#mermelada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTemporada"/>
         <NamedIndividual IRI="#Pera"/>
         <NamedIndividual IRI="#Invierno"/>
@@ -341,6 +370,41 @@
         <NamedIndividual IRI="#Pomelo"/>
         <NamedIndividual IRI="#Invierno"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>marron</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>verde</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esComestible"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>Dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>suave</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>Blanda</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#Coco"/>
+        <Literal>Firme</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tieneMineral"/>
         <NamedIndividual IRI="#FortalecimientoDelSistemaInmunologico"/>
@@ -502,6 +566,11 @@
         <Literal>naranja vibrante</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#esComestible"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#saborDefruta"/>
         <NamedIndividual IRI="#Naranja"/>
         <Literal>dulce</Literal>
@@ -600,6 +669,26 @@
         <DataProperty IRI="#texturaDeFruta"/>
         <NamedIndividual IRI="#Pomelo"/>
         <Literal>Jugosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#duracionEnMes"/>
+        <NamedIndividual IRI="#Verano"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#empiezaEnMes"/>
+        <NamedIndividual IRI="#Verano"/>
+        <Literal>Diciembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombreEstacion"/>
+        <NamedIndividual IRI="#Verano"/>
+        <Literal>Verano</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#terminaMes"/>
+        <NamedIndividual IRI="#Verano"/>
+        <Literal>Marzo</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tiempoDeConservacion"/>
