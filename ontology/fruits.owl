@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.mi-ontologia-frutas.org/ontologia">
-    <Prefix name="" IRI="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/"/>
+    <Prefix name="" IRI="http://www.mi-ontologia-frutas.org/ontologia#"/>
     <Prefix name="g" IRI="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -16,7 +16,7 @@
     <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
     <Annotation>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
-        <AnonymousIndividual nodeID="_:genid2147483675"/>
+        <AnonymousIndividual nodeID="_:genid2147483678"/>
     </Annotation>
     <Declaration>
         <Class IRI="#Acido"/>
@@ -554,6 +554,11 @@
         <NamedIndividual IRI="#VitaminaC"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <NamedIndividual IRI="#Mango"/>
+        <NamedIndividual IRI="#Verano"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTipoDeFruta"/>
         <NamedIndividual IRI="#Mango"/>
         <NamedIndividual IRI="#Tropical"/>
@@ -619,6 +624,11 @@
         <NamedIndividual IRI="#Tropical"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <NamedIndividual IRI="#Pera"/>
+        <NamedIndividual IRI="#VitaminaC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTemporada"/>
         <NamedIndividual IRI="#Pera"/>
         <NamedIndividual IRI="#Invierno"/>
@@ -647,6 +657,11 @@
         <ObjectProperty IRI="#induceBeneficio"/>
         <NamedIndividual IRI="#PolifenolX"/>
         <NamedIndividual IRI="#AntiOxidante"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <NamedIndividual IRI="#Pomelo"/>
+        <NamedIndividual IRI="#VitaminaC"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTemporada"/>
@@ -842,6 +857,11 @@
         <DataProperty IRI="#indiceORAC"/>
         <NamedIndividual IRI="#Mango"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2823</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombreCientifico"/>
+        <NamedIndividual IRI="#Mango"/>
+        <Literal>Mangifera Indica</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#texturaDeFruta"/>
@@ -1102,9 +1122,9 @@
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#seCultivaPor"/>
     </FunctionalObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#tieneBeneficioSalud"/>
-    </TransitiveObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#tieneTipoDeFruta"/>
+    </InverseFunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#contribuyeAl"/>
         <Class IRI="#PropiedadNutricional"/>
@@ -1464,12 +1484,12 @@
     </DLSafeRule>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
-        <AnonymousIndividual nodeID="_:genid2147483675"/>
+        <AnonymousIndividual nodeID="_:genid2147483678"/>
         <Literal>Fruta EquivalentTo colorDeFruta value &quot;Verde&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
-        <AnonymousIndividual nodeID="_:genid2147483675"/>
+        <AnonymousIndividual nodeID="_:genid2147483678"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </AnnotationAssertion>
     <SubAnnotationPropertyOf>
