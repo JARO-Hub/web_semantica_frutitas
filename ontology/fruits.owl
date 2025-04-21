@@ -16,7 +16,7 @@
     <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
     <Annotation>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
-        <AnonymousIndividual nodeID="_:genid2147483678"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
     </Annotation>
     <Declaration>
         <Class IRI="#Acido"/>
@@ -31,13 +31,16 @@
         <Class IRI="#BeneficioSalud"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Categoria"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Ciudad"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Clima"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CondicionAmbiental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Continente"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Estacion"/>
@@ -56,6 +59,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Indice_glucemico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocalizacionGeopolitica"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MetodoDeCultivo"/>
@@ -88,6 +94,9 @@
         <ObjectProperty IRI="#esCategoriaDeFrutaDe"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#esEstacionDeMetodo"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#esPreparadaCon"/>
     </Declaration>
     <Declaration>
@@ -116,6 +125,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#seCultivaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seRealizaEnEstacion"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#tieneBeneficioSalud"/>
@@ -280,6 +292,9 @@
         <NamedIndividual IRI="#RefuerzoInmunologico"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Tropical"/>
     </Declaration>
     <Declaration>
@@ -307,7 +322,7 @@
         <Class IRI="#Fruta"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#tieneTipoDeFruta"/>
-            <Class IRI="#Categoria"/>
+            <Class IRI="#TipoDeFruto"/>
         </ObjectExactCardinality>
     </EquivalentClasses>
     <SubClassOf>
@@ -316,7 +331,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Altitud"/>
-        <Class IRI="#SituacionGeografica"/>
+        <Class IRI="#CondicionAmbiental"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Antioxidante"/>
@@ -328,11 +343,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Clima"/>
+        <Class IRI="#CondicionAmbiental"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CondicionAmbiental"/>
         <Class IRI="#SituacionGeografica"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Estacion"/>
-        <Class IRI="#MetodoDeCultivo"/>
+        <Class IRI="#Continente"/>
+        <Class IRI="#LocalizacionGeopolitica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Fibra"/>
@@ -347,16 +366,16 @@
         <Class IRI="#PropiedadNutricional"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LocalizacionGeopolitica"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Mineral"/>
         <Class IRI="#PropiedadNutricional"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Pais"/>
-        <Class IRI="#SituacionGeografica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TipoDeFruto"/>
-        <Class IRI="#Familia"/>
+        <Class IRI="#LocalizacionGeopolitica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vitamina"/>
@@ -379,7 +398,7 @@
         <NamedIndividual IRI="#Arandano"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Categoria"/>
+        <Class IRI="#TipoDeFruto"/>
         <NamedIndividual IRI="#Baya"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -387,7 +406,7 @@
         <NamedIndividual IRI="#Betacaroteno"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Categoria"/>
+        <Class IRI="#TipoDeFruto"/>
         <NamedIndividual IRI="#Citrico"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -439,7 +458,7 @@
         <NamedIndividual IRI="#Papaya"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Categoria"/>
+        <Class IRI="#TipoDeFruto"/>
         <NamedIndividual IRI="#Pepa"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -463,7 +482,11 @@
         <NamedIndividual IRI="#RefuerzoInmunologico"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Categoria"/>
+        <Class IRI="#Familia"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFruto"/>
         <NamedIndividual IRI="#Tropical"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1130,6 +1153,10 @@
         <Class IRI="#PropiedadNutricional"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esEstacionDeMetodo"/>
+        <Class IRI="#Estacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#esPreparadaCon"/>
         <Class IRI="#Preparacion"/>
     </ObjectPropertyDomain>
@@ -1168,6 +1195,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#seCultivaPor"/>
         <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seRealizaEnEstacion"/>
+        <Class IRI="#MetodoDeCultivo"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#tieneBeneficioSalud"/>
@@ -1190,6 +1221,10 @@
         <Class IRI="#Fruta"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#esEstacionDeMetodo"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#esPreparadaCon"/>
         <Class IRI="#Fruta"/>
     </ObjectPropertyRange>
@@ -1230,6 +1265,10 @@
         <Class IRI="#MetodoDeCultivo"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#seRealizaEnEstacion"/>
+        <Class IRI="#Estacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#tieneBeneficioSalud"/>
         <Class IRI="#BeneficioSalud"/>
     </ObjectPropertyRange>
@@ -1243,7 +1282,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#tieneTipoDeFruta"/>
-        <Class IRI="#Categoria"/>
+        <Class IRI="#TipoDeFruto"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#cantidadVitaminaC"/>
@@ -1334,16 +1373,8 @@
         <Class IRI="#Familia"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#tieneHueso"/>
-        <Class IRI="#TipoDeFruto"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#tieneMineral"/>
         <Class IRI="#Mineral"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#tienePulpa"/>
-        <Class IRI="#TipoDeFruto"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#tieneVitamina"/>
@@ -1484,12 +1515,12 @@
     </DLSafeRule>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
-        <AnonymousIndividual nodeID="_:genid2147483678"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
         <Literal>Fruta EquivalentTo colorDeFruta value &quot;Verde&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
-        <AnonymousIndividual nodeID="_:genid2147483678"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </AnnotationAssertion>
     <SubAnnotationPropertyOf>
