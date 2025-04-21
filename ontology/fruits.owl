@@ -16,7 +16,7 @@
     <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
     <Annotation>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
-        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <AnonymousIndividual nodeID="_:genid2147483648"/>
     </Annotation>
     <Declaration>
         <Class IRI="#Acido"/>
@@ -622,6 +622,11 @@
         <NamedIndividual IRI="#mermelada"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneTipoDeFruta"/>
         <NamedIndividual IRI="#Naranja"/>
         <NamedIndividual IRI="#Citrico"/>
@@ -680,6 +685,11 @@
         <ObjectProperty IRI="#induceBeneficio"/>
         <NamedIndividual IRI="#PolifenolX"/>
         <NamedIndividual IRI="#AntiOxidante"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <NamedIndividual IRI="#Pomelo"/>
+        <NamedIndividual IRI="#Rutaceae"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tienePropiedad"/>
@@ -1515,12 +1525,12 @@
     </DLSafeRule>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
-        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <AnonymousIndividual nodeID="_:genid2147483648"/>
         <Literal>Fruta EquivalentTo colorDeFruta value &quot;Verde&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
-        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <AnonymousIndividual nodeID="_:genid2147483648"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </AnnotationAssertion>
     <SubAnnotationPropertyOf>
