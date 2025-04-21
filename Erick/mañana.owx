@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.mi-ontologia-frutas.org/ontologia"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.mi-ontologia-frutas.org/ontologia">
+    <Prefix name="" IRI="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
+    <Declaration>
+        <Class IRI="#Acido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Altitud"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ciudad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clima"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Familia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fibra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fitonutriente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fruta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indice_glucemico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MetodoDeCultivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mineral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Preparacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropiedadNutricional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SituacionGeografica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TipoDeFruto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vitamina"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esPreparadaCon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esProductoraDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esUsadaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estaConformadaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#produce"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#producidaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seCultivaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tienePropiedad"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneTemporada"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#altura_mts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cantidadDeFibra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cantidadDePH"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#colorDeFruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#duracionEnMes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#empiezaEnMes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esComestible"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nombreCientifico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nombreDeClima"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nombreEstacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numeroIndiceGlucemico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#saborDefruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#terminaMes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#texturaDeFruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneFlores"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneHueso"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tienePulpa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Invierno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Otoño"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pomelo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mermelada"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Acido"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Altitud"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ciudad"/>
+        <Class IRI="#Pais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clima"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estacion"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fibra"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fitonutriente"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Indice_glucemico"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mineral"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pais"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TipoDeFruto"/>
+        <Class IRI="#Familia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vitamina"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estacion"/>
+        <NamedIndividual IRI="#Invierno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estacion"/>
+        <NamedIndividual IRI="#Otoño"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Pera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Pomelo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preparacion"/>
+        <NamedIndividual IRI="#mermelada"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+        <NamedIndividual IRI="#Invierno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+        <NamedIndividual IRI="#mermelada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+        <NamedIndividual IRI="#Otoño"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <NamedIndividual IRI="#Pera"/>
+        <NamedIndividual IRI="#Invierno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <NamedIndividual IRI="#Pomelo"/>
+        <NamedIndividual IRI="#Invierno"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+        <Literal>Rojo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esComestible"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+        <Literal>Dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#GuayabaRoja"/>
+        <Literal>Jugosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#duracionEnMes"/>
+        <NamedIndividual IRI="#Invierno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#empiezaEnMes"/>
+        <NamedIndividual IRI="#Invierno"/>
+        <Literal>Junio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombreEstacion"/>
+        <NamedIndividual IRI="#Invierno"/>
+        <Literal>Invierno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#terminaMes"/>
+        <NamedIndividual IRI="#Invierno"/>
+        <Literal>Julio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+        <Literal>Rojo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+        <Literal>Dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#ManzanaRoja"/>
+        <Literal>Crujiente</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#duracionEnMes"/>
+        <NamedIndividual IRI="#Otoño"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#empiezaEnMes"/>
+        <NamedIndividual IRI="#Otoño"/>
+        <Literal>Agosto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombreEstacion"/>
+        <NamedIndividual IRI="#Otoño"/>
+        <Literal>Otoño</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#terminaMes"/>
+        <NamedIndividual IRI="#Otoño"/>
+        <Literal>Noviembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#Pera"/>
+        <Literal>verde</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#Pera"/>
+        <Literal>dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#Pera"/>
+        <Literal>Jugosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#Pomelo"/>
+        <Literal>Rosado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#Pomelo"/>
+        <Literal>Dulce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#Pomelo"/>
+        <Literal>Jugosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+        <NamedIndividual IRI="#mermelada"/>
+        <Literal>3 meses</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+        <NamedIndividual IRI="#mermelada"/>
+        <Literal>1 hora</Literal>
+    </DataPropertyAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#seCultivaPor"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esPreparadaCon"/>
+        <Class IRI="#Preparacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esProductoraDe"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaConformadaPor"/>
+        <Class IRI="#Familia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#produce"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#producidaEn"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seCultivaPor"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esPreparadaCon"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esProductoraDe"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <Class IRI="#Preparacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estaConformadaPor"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <Class IRI="#Familia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#produce"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#producidaEn"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seCultivaPor"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneTemporada"/>
+        <Class IRI="#Estacion"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#altura_mts"/>
+        <Class IRI="#Altitud"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cantidadDeFibra"/>
+        <Class IRI="#Fibra"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cantidadDePH"/>
+        <Class IRI="#Acido"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#colorDeFruta"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#duracionEnMes"/>
+        <Class IRI="#Estacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#empiezaEnMes"/>
+        <Class IRI="#Estacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esComestible"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nombreCientifico"/>
+        <Class IRI="#Familia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nombreDeClima"/>
+        <Class IRI="#Clima"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nombreEstacion"/>
+        <Class IRI="#Estacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numeroIndiceGlucemico"/>
+        <Class IRI="#Indice_glucemico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#saborDefruta"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#terminaMes"/>
+        <Class IRI="#Estacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+        <Class IRI="#Preparacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+        <Class IRI="#Preparacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneFlores"/>
+        <Class IRI="#Familia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneHueso"/>
+        <Class IRI="#TipoDeFruto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tienePulpa"/>
+        <Class IRI="#TipoDeFruto"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#altura_mts"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cantidadDeFibra"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cantidadDePH"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#colorDeFruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#duracionEnMes"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#empiezaEnMes"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esComestible"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nombreCientifico"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nombreDeClima"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nombreEstacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numeroIndiceGlucemico"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#saborDefruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#terminaMes"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tiempoDeConservacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneFlores"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneHueso"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tienePulpa"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
