@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.mi-ontologia-frutas.org/ontologia"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.mi-ontologia-frutas.org/ontologia">
+    <Prefix name="" IRI="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
+    <Declaration>
+        <Class IRI="#Acido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Altitud"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ciudad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clima"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Familia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fibra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fitonutriente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fruta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indice_glucemico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MetodoDeCultivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mineral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Preparacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropiedadNutricional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SituacionGeografica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TipoDeFruto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vitamina"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esPreparadaCon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esProductoraDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esUsadaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estaConformadaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#produce"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#producidaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seCultivaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tienePropiedad"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneVitamina"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#altura_mts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cantidadDeFibra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cantidadDePH"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#colorDeFruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nombreCientifico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numeroIndiceGlucemico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#saborDefruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#texturaDeFruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneFlores"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneHueso"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tienePulpa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Achachairu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Arecaceae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Argentina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BananaCavendish"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BayaInst"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#China"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClimaTemplado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Copoazu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoAchachairu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoCopoazu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CultivoFrutilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frutilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Granada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Indonesia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mandarina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ManeraComerCrudo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Manzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mermelada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mexico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Naranja"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PreparacionManzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Punicaceae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rosaceae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VitaminaC"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Acido"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Altitud"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ciudad"/>
+        <Class IRI="#Pais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clima"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fibra"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fitonutriente"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Indice_glucemico"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mineral"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pais"/>
+        <Class IRI="#SituacionGeografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TipoDeFruto"/>
+        <Class IRI="#Familia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vitamina"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Achachairu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Familia"/>
+        <NamedIndividual IRI="#Arecaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#Argentina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#BananaCavendish"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFruto"/>
+        <NamedIndividual IRI="#BayaInst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#China"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Clima"/>
+        <NamedIndividual IRI="#ClimaTemplado"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Coco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Copoazu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#DuraznoConPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFruto"/>
+        <NamedIndividual IRI="#FamiliaTipoTropical"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Frutilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Granada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#Indonesia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Mandarina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Manzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preparacion"/>
+        <NamedIndividual IRI="#Mermelada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Mora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruta"/>
+        <NamedIndividual IRI="#Naranja"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preparacion"/>
+        <NamedIndividual IRI="#PreparacionManzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFruto"/>
+        <NamedIndividual IRI="#Punicaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#RegionAmazonica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SituacionGeografica"/>
+        <NamedIndividual IRI="#RegionSantaCruz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Familia"/>
+        <NamedIndividual IRI="#Rosaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TipoDeFruto"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vitamina"/>
+        <NamedIndividual IRI="#VitaminaC"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <NamedIndividual IRI="#Mandarina"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <NamedIndividual IRI="#Mandarina"/>
+        <NamedIndividual IRI="#VitaminaC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <NamedIndividual IRI="#Rutaceae"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <Literal>Amarillo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <Literal>Muy ácido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#LimonSinPepa"/>
+        <Literal>Jugosa, con pulpa segmentada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#Mandarina"/>
+        <Literal>Naranja</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#Mandarina"/>
+        <Literal>Dulce y ligeramente ácido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#Mandarina"/>
+        <Literal>Muy jugosa, con pulpa fácil de separa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colorDeFruta"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <Literal>Naranja</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#saborDefruta"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <Literal>Dulce con un toque ácido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <Literal>Jugosa, con pulpa segmentada</Literal>
+    </DataPropertyAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#seCultivaPor"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esPreparadaCon"/>
+        <Class IRI="#Preparacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esProductoraDe"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaConformadaPor"/>
+        <Class IRI="#Familia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+        <Class IRI="#Vitamina"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#produce"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#producidaEn"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seCultivaPor"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esPreparadaCon"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esProductoraDe"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esUsadaEn"/>
+        <Class IRI="#Preparacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estaConformadaPor"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estaContenidaEn"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#perteneceFamilia"/>
+        <Class IRI="#Familia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#produce"/>
+        <Class IRI="#Fruta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#producidaEn"/>
+        <Class IRI="#SituacionGeografica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seCultivaPor"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tienePropiedad"/>
+        <Class IRI="#PropiedadNutricional"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#altura_mts"/>
+        <Class IRI="#Altitud"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cantidadDeFibra"/>
+        <Class IRI="#Fibra"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cantidadDePH"/>
+        <Class IRI="#Acido"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#colorDeFruta"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+        <Class IRI="#MetodoDeCultivo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nombreCientifico"/>
+        <Class IRI="#Familia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numeroIndiceGlucemico"/>
+        <Class IRI="#Indice_glucemico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#saborDefruta"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <Class IRI="#Fruta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+        <Class IRI="#Preparacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneFlores"/>
+        <Class IRI="#Familia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneHueso"/>
+        <Class IRI="#TipoDeFruto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tienePulpa"/>
+        <Class IRI="#TipoDeFruto"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#altura_mts"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cantidadDeFibra"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cantidadDePH"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#colorDeFruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#descripcionDeMetodoDeCultivo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nombreCientifico"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numeroIndiceGlucemico"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#saborDefruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#texturaDeFruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tiempoDePreparacion"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneFlores"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneHueso"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tienePulpa"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

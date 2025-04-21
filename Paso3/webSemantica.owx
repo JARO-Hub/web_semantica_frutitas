@@ -750,7 +750,17 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#Fibra"/>
         <NamedIndividual IRI="#ValorNutricionalGranada"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+        <Literal>4 gramos de fibra dietética</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+        <Literal>Bajo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Mineral"/>
+        <NamedIndividual IRI="#ValorNutricionalGranada"/>
+        <Literal>Potasio</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Vitamina"/>
@@ -766,6 +776,16 @@
         <DataProperty IRI="#Fibra"/>
         <NamedIndividual IRI="#ValorNutricionalManzana"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IndiceGlucemico"/>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
+        <Literal>Bajo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Mineral"/>
+        <NamedIndividual IRI="#ValorNutricionalManzana"/>
+        <Literal>Potasio 107mg</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Vitamina"/>
