@@ -16,7 +16,7 @@
     <Import>http://www.mi-ontologia-frutas.org/ontologia</Import>
     <Annotation>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
-        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <AnonymousIndividual nodeID="_:genid2147483675"/>
     </Annotation>
     <Declaration>
         <Class IRI="#Acido"/>
@@ -223,6 +223,9 @@
         <NamedIndividual IRI="#Betacaroteno"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Citrico"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Coco"/>
     </Declaration>
     <Declaration>
@@ -257,6 +260,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Papaya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pepa"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Pera"/>
@@ -337,10 +343,6 @@
         <Class IRI="#PropiedadNutricional"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Fruta"/>
-        <Class IRI="#Fruta"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Indice_glucemico"/>
         <Class IRI="#PropiedadNutricional"/>
     </SubClassOf>
@@ -351,10 +353,6 @@
     <SubClassOf>
         <Class IRI="#Pais"/>
         <Class IRI="#SituacionGeografica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SituacionGeografica"/>
-        <Class IRI="#Altitud"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TipoDeFruto"/>
@@ -387,6 +385,10 @@
     <ClassAssertion>
         <Class IRI="#Vitamina"/>
         <NamedIndividual IRI="#Betacaroteno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Categoria"/>
+        <NamedIndividual IRI="#Citrico"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Fruta"/>
@@ -435,6 +437,10 @@
     <ClassAssertion>
         <Class IRI="#Fruta"/>
         <NamedIndividual IRI="#Papaya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Categoria"/>
+        <NamedIndividual IRI="#Pepa"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Fruta"/>
@@ -588,6 +594,11 @@
         <NamedIndividual IRI="#mermelada"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTipoDeFruta"/>
+        <NamedIndividual IRI="#Naranja"/>
+        <NamedIndividual IRI="#Citrico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#esUsadaEn"/>
         <NamedIndividual IRI="#Papaya"/>
         <NamedIndividual IRI="#mermelada"/>
@@ -611,6 +622,11 @@
         <ObjectProperty IRI="#tieneTemporada"/>
         <NamedIndividual IRI="#Pera"/>
         <NamedIndividual IRI="#Invierno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneTipoDeFruta"/>
+        <NamedIndividual IRI="#Pera"/>
+        <NamedIndividual IRI="#Pepa"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tienePropiedad"/>
@@ -1448,12 +1464,12 @@
     </DLSafeRule>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
-        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <AnonymousIndividual nodeID="_:genid2147483675"/>
         <Literal>Fruta EquivalentTo colorDeFruta value &quot;Verde&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
-        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <AnonymousIndividual nodeID="_:genid2147483675"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </AnnotationAssertion>
     <SubAnnotationPropertyOf>
