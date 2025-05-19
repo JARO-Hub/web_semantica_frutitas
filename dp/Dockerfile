@@ -1,5 +1,5 @@
 # Use the official Node.js image for building Angular
-FROM node:22.15.0-alpine
+FROM node:22.15.0-alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -11,11 +11,26 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the application code into the container
+RUN npm ci
+
 COPY . .
 
 # Build the Angular app
-RUN npm run build --prod
+RUN npx ng build --configuration production
 # Expose the port the app runs on
-EXPOSE 4200
-# Start the Angular app
-CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "4200", "--configuration=development"]
+# ---------- 2) Fase runtime ----------
+FROM nginx:1.27-alpine
+
+# Copiamos el build al doc-root de nginx
+COPY --from=builder /app/dist/frutas/ /usr/share/nginx/html
+
+# Small tweaks: compresión y SPA fallback
+RUN <<'BASH'
+  set -e
+  # gzip está habilitado por defecto; añadimos fallback para rutas internas
+  printf '\nlocation / { try_files $uri $uri/ /index.html; }\n' \
+        > /etc/nginx/conf.d/spa.conf
+BASH
+
+EXPOSE 80
+CMD ["nginx","-g","daemon off;"]

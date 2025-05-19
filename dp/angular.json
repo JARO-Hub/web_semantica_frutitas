@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo7",
+            "outputPath": "dist/frutas",
             "allowedCommonJsDependencies": [
               "object-path",
               "apexcharts",
