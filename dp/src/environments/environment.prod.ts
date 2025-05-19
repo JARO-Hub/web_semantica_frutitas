@@ -9,7 +9,7 @@ export const environment = {
   isMockEnabled: true,
   apiUrl: 'api',
   appThemeName: 'Metronic',
-  fusekiApiUrl: 'http://fuseki:3030',
+  fusekiApiUrl: '/fuseki',
   appPurchaseUrl: 'https://1.envato.market/EA4JP',
   appHTMLIntegration:
     'https://preview.keenthemes.com/metronic8/demo7/documentation/base/helpers/flex-layouts.html',
