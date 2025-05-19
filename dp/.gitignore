@@ -1,4 +1,4 @@
-
+ontology/fuseki/databases/ds/*
 # compiled output
 /dist-*
 /dist
