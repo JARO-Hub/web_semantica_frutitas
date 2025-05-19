@@ -10,14 +10,10 @@ concurrency:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: actions/checkout@v4
-      - name: Instalar dependencias
-        run: |
-          # Aquí instalas lo que necesites
-          # Para un .owl puede que no necesites nada, pero
-          # en el futuro para Angular será "npm install && npm run build"
-          echo "Instalando... Team DeploymentSoftware - Ontologia Frutas"
+
       - name: Correr pruebas
         run: |
           echo "Probando..."
@@ -47,6 +43,37 @@ jobs:
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" . \
               ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
-      - name: Reload Nginx
+      - name: Remote deploy (Docker build + healthcheck)
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "sudo nginx -T && sudo service nginx restart"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} <<'REMOTE'
+            set -Eeuo pipefail
+            PROJECT_DIR="/var/www/frutas_ontologia/dp"
+            IMAGE="ontology-dp/frutas:latest"
+            STACK="frutas_frontend"
+            PORT=8081
+            HEALTH="http://127.0.0.1:${PORT}/"
+
+            echo -e "\033[1;33m⏹  1) Stopping old ${STACK}…\033[0m"
+            sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" stop ${STACK} || true
+
+            echo -e "\033[1;34m🔨  2) Building image ${IMAGE}…\033[0m"
+            sudo docker build -f "${PROJECT_DIR}/Dockerfile" "${PROJECT_DIR}" \
+                 -t "${IMAGE}" --pull --no-cache
+
+            echo -e "\033[1;32m🚀  3) Bringing container up…\033[0m"
+            sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" up -d --build ${STACK}
+
+            echo -e "\033[1;36m🩺  4) Health-check ${HEALTH}…\033[0m"
+            for i in {1..10}; do curl -fsSL "$HEALTH" >/dev/null && break; sleep 2; done
+            if ! curl -fsSL "$HEALTH" >/dev/null; then
+              echo -e "\033[1;31mHealth-check failed, rolling back!\033[0m" >&2
+              sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" stop ${STACK}
+              exit 1
+            fi
+
+            echo -e "\033[1;35m🧹  5) Docker image prune…\033[0m"
+            sudo docker image prune -f
+
+            echo -e "\033[1;32m✅  Deploy SUCCESS\033[0m"
+            sudo systemctl reload nginx
+          REMOTE
