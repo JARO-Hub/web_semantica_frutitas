@@ -1,0 +1,1127 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.mi-ontologia-frutas.org/ontologia#"
+     xml:base="http://www.mi-ontologia-frutas.org/ontologia"
+     xmlns:g="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:ontodebug="http://ainf.aau.at/ontodebug#">
+    <owl:Ontology rdf:about="http://www.mi-ontologia-frutas.org/ontologia">
+        <ontodebug:testCase>
+            <rdf:Description>
+                <ontodebug:axiom>Fruta EquivalentTo colorDeFruta value &quot;Verde&quot;</ontodebug:axiom>
+                <ontodebug:type rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ontodebug:type>
+            </rdf:Description>
+        </ontodebug:testCase>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ainf.aau.at/ontodebug#axiom -->
+
+    <owl:AnnotationProperty rdf:about="http://ainf.aau.at/ontodebug#axiom">
+        <rdfs:subPropertyOf rdf:resource="http://ainf.aau.at/ontodebug#testCase"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://ainf.aau.at/ontodebug#testCase -->
+
+    <owl:AnnotationProperty rdf:about="http://ainf.aau.at/ontodebug#testCase"/>
+    
+
+
+    <!-- http://ainf.aau.at/ontodebug#type -->
+
+    <owl:AnnotationProperty rdf:about="http://ainf.aau.at/ontodebug#type">
+        <rdfs:subPropertyOf rdf:resource="http://ainf.aau.at/ontodebug#testCase"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#contribuyeAl -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#contribuyeAl">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#esCategoriaDeFrutaDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#esCategoriaDeFrutaDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#tieneTipoDeFruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#esEstacionDeMetodo -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#esEstacionDeMetodo">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#esPreparadaCon -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#esPreparadaCon">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Preparacion"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#esProductoraDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#esProductoraDe">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#SituacionGeografica"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#esUsadaEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#esUsadaEn">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Preparacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#estaConformadaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#estaConformadaPor">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#estaContenidaEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#estaContenidaEn">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#induceBeneficio -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#induceBeneficio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#perteneceFamilia -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#perteneceFamilia">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#produce -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#produce">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#producidaEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#producidaEn">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#SituacionGeografica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#seCultivaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#seCultivaPor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#seRealizaEnEstacion -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#seRealizaEnEstacion">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneBeneficioSalud -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneBeneficioSalud">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tienePropiedad -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tienePropiedad">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneTemporada -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneTemporada">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneTipoDeFruta -->
+
+    <owl:ObjectProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneTipoDeFruta">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#altura_mts -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#altura_mts">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Altitud"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#beneficio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#beneficio">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#cantidadDePH -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#cantidadDePH">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Acido"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#cantidadVitamina -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#cantidadVitamina">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#cantidadVitaminaC -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#cantidadVitaminaC">
+        <rdfs:subPropertyOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#cantidadVitamina"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#colorDeFruta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#colorDeFruta">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#descripcionDeMetodoDeCultivo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#descripcionDeMetodoDeCultivo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#duracionEnMes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#duracionEnMes">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#empiezaEnMes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#empiezaEnMes">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#esComestible -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#esComestible">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#indiceORAC -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#indiceORAC">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#nombreCientifico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#nombreCientifico">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#nombreDeClima -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#nombreDeClima">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Clima"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#nombreEstacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#nombreEstacion">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#numeroIndiceGlucemico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#numeroIndiceGlucemico">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Indice_glucemico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#saborDefruta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#saborDefruta">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#terminaMes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#terminaMes">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#texturaDeFruta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#texturaDeFruta">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tiempoDeConservacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tiempoDeConservacion">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Preparacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tiempoDePreparacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tiempoDePreparacion">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Preparacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneFlores -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneFlores">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneHueso -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneHueso">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneMineral -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneMineral">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Mineral"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tienePulpa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tienePulpa">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#tieneVitamina -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mi-ontologia-frutas.org/ontologia#tieneVitamina">
+        <rdfs:domain rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Vitamina"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Acido -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Acido">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Altitud -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Altitud">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#CondicionAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Antioxidante -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Ciudad -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Ciudad">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Pais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Clima -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Clima">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#CondicionAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#CondicionAmbiental -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#CondicionAmbiental">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#SituacionGeografica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Continente -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Continente">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#LocalizacionGeopolitica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Estacion -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Familia -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Fibra -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Fibra">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Fitonutriente -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Fitonutriente">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Fruta -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Fruta">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#tieneTipoDeFruta"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Indice_glucemico -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Indice_glucemico">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#LocalizacionGeopolitica -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#LocalizacionGeopolitica">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#SituacionGeografica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#MetodoDeCultivo"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Mineral -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Mineral">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pais -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pais">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#LocalizacionGeopolitica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Preparacion -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Preparacion"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#SituacionGeografica -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#SituacionGeografica"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Vitamina -->
+
+    <owl:Class rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Vitamina">
+        <rdfs:subClassOf rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Acai -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Acai">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antocianina"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Baya"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15300</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+        <beneficio>capacidad antioxidante</beneficio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Antocianina -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Antocianina">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Arandano -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Arandano">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9621</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Baya -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Baya">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Betacaroteno -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Betacaroteno">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Vitamina"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Carica -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Carica">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Licopeno"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4969</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Citrico -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Citrico">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Coco -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Coco">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Verano"/>
+        <colorDeFruta>marron</colorDeFruta>
+        <colorDeFruta>verde</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>Dulce</saborDefruta>
+        <saborDefruta>suave</saborDefruta>
+        <texturaDeFruta>Blanda</texturaDeFruta>
+        <texturaDeFruta>Firme</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PropiedadNutricional"/>
+        <tieneMineral>hierro</tieneMineral>
+        <tieneMineral>magnesio</tieneMineral>
+        <tieneMineral>zinc</tieneMineral>
+        <tieneVitamina>c</tieneVitamina>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Fresa -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Fresa">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <contribuyeAl rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <colorDeFruta>rojo</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>dulce</saborDefruta>
+        <texturaDeFruta>suave</texturaDeFruta>
+        <tieneMineral>calcio</tieneMineral>
+        <tieneMineral>potasio</tieneMineral>
+        <tieneVitamina>a</tieneVitamina>
+        <tieneVitamina>c</tieneVitamina>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#GuayabaRoja -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#GuayabaRoja">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Invierno"/>
+        <colorDeFruta>Rojo</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>Dulce</saborDefruta>
+        <saborDefruta>Jugosa</saborDefruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Invierno -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Invierno">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <duracionEnMes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</duracionEnMes>
+        <empiezaEnMes>Junio</empiezaEnMes>
+        <nombreEstacion>Invierno</nombreEstacion>
+        <terminaMes>Julio</terminaMes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Licopeno -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Licopeno">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Mangifera -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Mangifera">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <contribuyeAl rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Betacaroteno"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Verano"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2823</indiceORAC>
+        <nombreCientifico>Mangifera Indica</nombreCientifico>
+        <texturaDeFruta>jugosa</texturaDeFruta>
+        <texturaDeFruta>suave</texturaDeFruta>
+        <tieneMineral>magnesio</tieneMineral>
+        <tieneMineral>potasio</tieneMineral>
+        <tieneVitamina>c</tieneVitamina>
+        <tieneVitamina>e</tieneVitamina>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Mangifera"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <owl:annotatedTarget rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <rdfs:label>es</rdfs:label>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Manzana -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Manzana">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Otoño"/>
+        <colorDeFruta>Rojo</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>Dulce</saborDefruta>
+        <texturaDeFruta>Crujiente</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Maracuya -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Maracuya">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#PolifenolX"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1823</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Naranja -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Naranja">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <contribuyeAl rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <perteneceFamilia rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Rutaceae"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Citrico"/>
+        <colorDeFruta>naranja vibrante</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>dulce</saborDefruta>
+        <saborDefruta>ligeramente acido</saborDefruta>
+        <texturaDeFruta>jugosa</texturaDeFruta>
+        <tieneMineral>calcio</tieneMineral>
+        <tieneMineral>magnesio</tieneMineral>
+        <tieneMineral>potasio</tieneMineral>
+        <tieneVitamina>a</tieneVitamina>
+        <tieneVitamina>c</tieneVitamina>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Otoño -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Otoño">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <duracionEnMes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</duracionEnMes>
+        <empiezaEnMes>Agosto</empiezaEnMes>
+        <nombreEstacion>Otoño</nombreEstacion>
+        <terminaMes>Noviembre</terminaMes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pepa -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pepa">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pera -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pera">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Invierno"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Pepa"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <colorDeFruta>verde</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>dulce</saborDefruta>
+        <texturaDeFruta>Jugosa</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Piña -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Piña">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Betacaroteno"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2144</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#PolifenolX -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#PolifenolX">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pomelo -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pomelo">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <perteneceFamilia rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Rutaceae"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Invierno"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Citrico"/>
+        <colorDeFruta>Rosado</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>Dulce</saborDefruta>
+        <texturaDeFruta>Jugosa</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#RefuerzoInmunologico -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#RefuerzoInmunologico">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+        <beneficio>fortalece sistema inmune</beneficio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Rutaceae -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Rutaceae">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Tropical -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Tropical">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Verano -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Verano">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <duracionEnMes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</duracionEnMes>
+        <empiezaEnMes>Diciembre</empiezaEnMes>
+        <nombreEstacion>Verano</nombreEstacion>
+        <terminaMes>Marzo</terminaMes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#VitaminaC -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Vitamina"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#RefuerzoInmunologico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#mermelada -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#mermelada">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Preparacion"/>
+        <tiempoDeConservacion>3 meses</tiempoDeConservacion>
+        <tiempoDePreparacion>1 hora</tiempoDePreparacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/f">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/n">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>rule test</rdfs:comment>
+        <rdfs:label>rule_beneficios</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/f"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#tienePropiedad"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/f"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/n"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#induceBeneficio"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/n"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#tieneBeneficioSalud"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/f"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

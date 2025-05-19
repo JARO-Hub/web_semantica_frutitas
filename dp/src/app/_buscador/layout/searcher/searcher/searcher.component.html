@@ -1,0 +1,30 @@
+
+
+<!-- searcher.component.html -->
+<div class="card card-flush">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h3 class="card-title m-0">Buscador de Frutas</h3>
+    <div class="search-controls">
+      <input
+        [(ngModel)]="query"
+        class="form-control form-control-solid"
+        placeholder="Escribe el nombre de una fruta"
+      />
+      <select [(ngModel)]="lang" class=" form-select form-select-solid">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+      <button class="btn btn-primary" (click)="onSearch()">
+        {{ lang === 'es' ? 'Buscar' : 'Search' }}
+      </button>
+      <div *ngIf="isLoading()">Cargando...</div>
+      <div *ngIf="error()" class="text-danger">{{ error() }}</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- card-body -->
+    <app-results-table [data]="frutas()"></app-results-table>
+    <div *ngIf="isLoading()">Cargando…</div>
+    <div *ngIf="error()" class="text-danger">{{ error() }}</div>
+  </div>
+</div>

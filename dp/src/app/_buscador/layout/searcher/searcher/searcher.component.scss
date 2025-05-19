@@ -1,0 +1,107 @@
+/* src/app/_buscador/layout/searcher/components/searcher/searcher.component.scss */
+
+$primary: #3699FF;
+$input-bg: #F3F6F9;
+$border-radius: 0.75rem;
+
+.card {
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+
+  &-header {
+    background-color: white;
+    border-bottom: 1px solid #E4E6EF;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    padding: 1rem 1.5rem;
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #3F4254;
+    }
+
+    .search-controls {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+
+      .form-control {
+        background-color: $input-bg;
+        border: 1px solid #E4E6EF;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        width: 240px;
+        transition: border-color 0.2s;
+
+        &:focus {
+          border-color: $primary;
+          box-shadow: none;
+        }
+      }
+
+      .form-select {
+        background-color: $input-bg;
+        border: 1px solid #E4E6EF;
+        border-radius: 0.5rem;
+        min-width: 120px;
+
+        &:focus {
+          border-color: $primary;
+        }
+      }
+
+      .btn {
+        padding: 0.55rem 1.25rem;
+        font-weight: 500;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  &-body {
+    background-color: white;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    padding: 1rem 1.5rem;
+
+    app-responses {
+      display: block;
+    }
+  }
+}
+
+/* Resultado de respuestas */
+.app-responses {
+  .no-data {
+    color: #A1A5B7;
+    font-style: italic;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.625rem 0;
+      border-bottom: 1px solid #F3F6F9;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      strong {
+        color: #3F4254;
+      }
+      span {
+        color: #6E6B7B;
+      }
+    }
+  }
+}
