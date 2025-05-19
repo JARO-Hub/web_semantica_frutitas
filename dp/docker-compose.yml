@@ -1,0 +1,76 @@
+version: '3.8'
+
+networks:
+  frutasnet:
+    name: frutasnet
+    driver: bridge
+
+volumes:
+  cache:
+  fusedata:
+  osdata:
+
+services:
+
+  angular-builder:
+    image: ontology-dp/frutas:latest   # <-- aquí el nombre de la imagen que ya compilaste
+    container_name: frutas_frontend
+    ports:
+      - "4200:4200"                          # supongamos que tu Nginx interno sirve en 80
+    environment:
+      - API_URL=http://api:5000           # o lo que necesite tu Angular para conectar al backend
+    depends_on:
+      - redis
+      - fuseki
+      - opensearch
+    networks:
+      - frutasnet
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --save 20 1 --loglevel warning --requirepass $REDIS_PWD
+    environment:
+      REDIS_PWD: '${REDIS_PWD}'
+    ports:
+      - "6379:6379"
+    volumes:
+      - cache:/data
+    env_file:
+      - .env
+    networks:
+      - frutasnet
+
+  fuseki:
+    image: frutas/fuseki:5.4.0
+    container_name: fuseki
+    environment:
+      - FUSEKI_DATASET=ontologia
+      - FUSEKI_MEM=false
+      - ADMIN_PASSWORD=Admin123
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./ontology:/fuseki/config/userdata
+      - ./ontology/fuseki/shiro.ini:/fuseki/run/shiro.ini
+      - ./logs:/fuseki/logs
+      - ./ontology/fuseki/databases:/fuseki/databases
+    networks:
+      - frutasnet
+
+  opensearch:
+    image: opensearchproject/opensearch:2.14.0
+    environment:
+      - discovery.type=single-node
+      - DISABLE_SECURITY_PLUGIN=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - osdata:/usr/share/opensearch/data
+    ports:
+      - "9200:9200"
+    networks:
+      - frutasnet
+
+
