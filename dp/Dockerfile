@@ -26,11 +26,33 @@ COPY --from=builder /app/dist/frutas/ /usr/share/nginx/html
 
 # Small tweaks: compresión y SPA fallback
 RUN <<'BASH'
-  set -e
-  # gzip está habilitado por defecto; añadimos fallback para rutas internas
-  printf '\nlocation / { try_files $uri $uri/ /index.html; }\n' \
-        > /etc/nginx/conf.d/spa.conf
+set -e
+cat >/etc/nginx/conf.d/default.conf <<'CONF'
+server {
+    listen 80;
+    server_name _;
+
+    root   /usr/share/nginx/html;
+    index  index.html;
+
+    # --- Fallback SPA ---
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # --- Gzip mínimo (ya viene activado, sólo ejemplo) ---
+    gzip            on;
+    gzip_types      text/plain text/css application/json application/javascript application/octet-stream application/xml+rss;
+
+    # --- Cache estáticos un año ---
+    location ~* \.(?:js|css|png|jpg|jpeg|gif|ico|svg|woff2?|ttf)$ {
+        expires 365d;
+        add_header Cache-Control "public";
+    }
+}
+CONF
 BASH
+
 
 EXPOSE 80
 CMD ["nginx","-g","daemon off;"]

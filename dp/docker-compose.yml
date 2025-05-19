@@ -16,7 +16,7 @@ services:
     image: ontology-dp/frutas:latest   # <-- aquí el nombre de la imagen que ya compilaste
     container_name: frutas_frontend
     ports:
-      - "4200:4200"                          # supongamos que tu Nginx interno sirve en 80
+      - "8080:80"                          # supongamos que tu Nginx interno sirve en 80
     environment:
       - API_URL=http://api:5000           # o lo que necesite tu Angular para conectar al backend
     depends_on:
