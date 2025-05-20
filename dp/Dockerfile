@@ -1,5 +1,5 @@
 # Use the official Node.js image for building Angular
-FROM node:22.15.0-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
