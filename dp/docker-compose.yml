@@ -13,7 +13,7 @@ volumes:
 services:
 
   angular-builder:
-    image: ontology-dp/frutas:latest   # <-- aquí el nombre de la imagen que ya compilaste
+    image: julianrodriguez/frutas:latest   # <-- aquí el nombre de la imagen que ya compilaste
     container_name: frutas_frontend
     ports:
       - "8081:80"                          # supongamos que tu Nginx interno sirve en 80

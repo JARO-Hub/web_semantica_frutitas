@@ -95,8 +95,8 @@ jobs:
             ok()   { printf "${COLOR_OK}✔ $1${NC}\n"; }
             err()  { printf "${COLOR_ERR}✖ $1${NC}\n"; exit 1; }
           
-            PROJECT_DIR="${PROJECT_DIR}"
-            IMAGE="${IMAGE_NAME}:latest"
+            PROJECT_DIR="${DIR}"
+            IMAGE="${IMAGE}"
             STACK="${STACK}"
             HEALTH="http://127.0.0.1:${PORT}/"
           
