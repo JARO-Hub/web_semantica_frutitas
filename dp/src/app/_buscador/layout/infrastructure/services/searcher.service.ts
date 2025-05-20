@@ -5,6 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { environment } from '../../../../../environments/environment';
 import { FrutaModel } from "../../core/models/fruta.model";
 import { FRUTA_REPOSITORY, FrutaRepository } from "../../core/repositories/fruta.repository";
+import {FUSEKI_REPOSITORY, FusekiRepository} from "../../core/repositories/fuseki.repository";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,15 @@ private isLoading = signal(false);
   error = signal<string|null>(null);
 
 
-  constructor(private http: HttpClient, @Inject(FRUTA_REPOSITORY) private repository: FrutaRepository) {
+  constructor(
+    private http: HttpClient,
+
+    @Inject(FRUTA_REPOSITORY)
+    private repository: FrutaRepository,
+
+    @Inject(FUSEKI_REPOSITORY)
+    private fusekiRepository: FusekiRepository
+  ) {
 
   }
 

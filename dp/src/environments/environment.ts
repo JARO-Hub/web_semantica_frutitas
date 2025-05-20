@@ -10,6 +10,8 @@ export const environment = {
   apiUrl: 'aping',
   appThemeName: 'Metronic',
   fusekiApiUrl: 'http://localhost:3030',
+  fusekiUser: 'julian',
+  fusekiPassword: 'Admin123-',
   appPurchaseUrl: 'https://1.envato.market/EA4JP',
   appHTMLIntegration: 'https://preview.keenthemes.com/metronic8/demo7/documentation/base/helpers/flex-layouts.html',
   appPreviewUrl: 'https://preview.keenthemes.com/metronic8/angular/demo7/',

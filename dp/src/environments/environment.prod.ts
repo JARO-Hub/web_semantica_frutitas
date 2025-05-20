@@ -10,6 +10,8 @@ export const environment = {
   apiUrl: 'api',
   appThemeName: 'Metronic',
   fusekiApiUrl: '/fuseki',
+  fusekiUser: 'julian',
+  fusekiPassword: 'Admin123-',
   appPurchaseUrl: 'https://1.envato.market/EA4JP',
   appHTMLIntegration:
     'https://preview.keenthemes.com/metronic8/demo7/documentation/base/helpers/flex-layouts.html',

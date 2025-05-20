@@ -7,6 +7,11 @@ on:
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  IMAGE_NAME: ontology-dp/frutas
+
+
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -18,6 +23,35 @@ jobs:
         run: |
           echo "Probando..."
 
+  build_and_push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write     # si vas a GHCR; para DockerHub usa env vars
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up QEMU (multi-arch opcional)
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log-in to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASS }}
+
+      - name: Build & push imagen 🍊
+        uses: docker/build-push-action@v5
+        with:
+          context: ./dp
+          file: ./dp/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
   deploy:
     needs: build_and_test
     runs-on: ubuntu-latest
@@ -43,37 +77,43 @@ jobs:
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" . \
               ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
-      - name: Remote deploy (Docker build + healthcheck)
+      - name: 🚢  Deploy en el servidor
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          USER: ${{ secrets.DEPLOY_USER }}
+          PROJECT_DIR: /var/www/frutas_ontologia/dp
+          IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          STACK: frutas_frontend    # nombre del servicio en docker-compose
+          PORT: 8081
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} <<'REMOTE'
+          ssh -o StrictHostKeyChecking=no ${USER}@${HOST} /bin/bash <<'REMOTE'
             set -Eeuo pipefail
-            PROJECT_DIR="/var/www/frutas_ontologia/dp"
-            IMAGE="ontology-dp/frutas:latest"
-            STACK="frutas_frontend"
-            PORT=8081
+            COLOR_OK='\033[0;32m'; COLOR_INFO='\033[0;36m'; COLOR_ERR='\033[0;31m'; NC='\033[0m'
+            step() { printf "${COLOR_INFO}▶ $1…${NC}\n"; }
+            ok()   { printf "${COLOR_OK}✔ $1${NC}\n"; }
+            err()  { printf "${COLOR_ERR}✖ $1${NC}\n"; exit 1; }
+          
+            PROJECT_DIR="${PROJECT_DIR}"
+            IMAGE="${IMAGE_NAME}:latest"
+            STACK="${STACK}"
             HEALTH="http://127.0.0.1:${PORT}/"
-
-            echo -e "\033[1;33m⏹  1) Stopping old ${STACK}…\033[0m"
-            sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" stop ${STACK} || true
-
-            echo -e "\033[1;34m🔨  2) Building image ${IMAGE}…\033[0m"
-            sudo docker build -f "${PROJECT_DIR}/Dockerfile" "${PROJECT_DIR}" \
-                 -t "${IMAGE}" --pull --no-cache
-
-            echo -e "\033[1;32m🚀  3) Bringing container up…\033[0m"
-            sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" up -d --build ${STACK}
-
-            echo -e "\033[1;36m🩺  4) Health-check ${HEALTH}…\033[0m"
-            for i in {1..10}; do curl -fsSL "$HEALTH" >/dev/null && break; sleep 2; done
-            if ! curl -fsSL "$HEALTH" >/dev/null; then
-              echo -e "\033[1;31mHealth-check failed, rolling back!\033[0m" >&2
-              sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" stop ${STACK}
-              exit 1
-            fi
-
-            echo -e "\033[1;35m🧹  5) Docker image prune…\033[0m"
-            sudo docker image prune -f
-
-            echo -e "\033[1;32m✅  Deploy SUCCESS\033[0m"
+          
+            step "1) Pull de la imagen nueva"
+            sudo docker pull "${IMAGE}" || err "pull falló"
+          
+            step "2) Recrear servicio ${STACK}"
+            sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" up -d --no-deps --build ${STACK} \
+              || err "docker compose falló"
+          
+            step "3) Health-check (${HEALTH})"
+            for i in {1..15}; do curl -fsSL "$HEALTH" && break || sleep 2; done
+            curl -fsSL "$HEALTH" >/dev/null || { err "Healthcheck falló"; }
+          
+            step "4) Limpiar capas antiguas"
+            sudo docker image prune -af -q || true
+          
+            step "5) Recargar Nginx"
             sudo systemctl reload nginx
+          
+            ok "Deploy completado con éxito"
           REMOTE

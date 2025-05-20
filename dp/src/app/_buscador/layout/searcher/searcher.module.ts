@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { provideHttpClient } from "@angular/common/http";
+import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
 
 import { SearcherComponent } from "./searcher/searcher.component";
 import { ResultadosComponent } from "./responses/responses.component";
@@ -19,6 +19,9 @@ import {
   MatTableModule
 } from "@angular/material/table";
 import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
+import {B2B_INTERCEPTOR_PROVIDERS, B2bInterceptor} from "../infrastructure/angular/b2b.interceptor";
+import {FUSEKI_REPOSITORY} from "../core/repositories/fuseki.repository";
+import {HttpFusekiRepository} from "../infrastructure/repositories/http-fuseki.repository";
 
 
 @NgModule({
@@ -42,12 +45,18 @@ import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
     MatPaginatorModule
   ],
   providers: [
-    provideHttpClient(),
+    provideHttpClient(/*withInterceptorsFromDi()*/),
+    B2B_INTERCEPTOR_PROVIDERS,
     SearcherService,
     {
       provide: FRUTA_REPOSITORY,
       useClass: SparqlFrutaRepository
-    }
+    },
+    {
+      provide: FUSEKI_REPOSITORY,
+      useClass: HttpFusekiRepository
+    },
+
   ]
 })
 export class SearcherModule { }
