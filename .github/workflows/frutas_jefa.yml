@@ -88,7 +88,7 @@ jobs:
           DIR: ${{ env.PROJECT_DIR }}
           PORT: ${{ env.PORT }}
         run: |
-          ssh -o StrictHostKeyChecking=no ${USER}@${HOST} /bin/bash <<'REMOTE'
+          ssh -o StrictHostKeyChecking=no ${USER}@${HOST} /bin/bash <<REMOTE
             set -Eeuo pipefail
             COLOR_OK='\033[0;32m'; COLOR_INFO='\033[0;36m'; COLOR_ERR='\033[0;31m'; NC='\033[0m'
             step() { printf "${COLOR_INFO}▶ $1…${NC}\n"; }
@@ -101,18 +101,18 @@ jobs:
             HEALTH="http://127.0.0.1:${PORT}/"
           
             step "1) Pull de la imagen nueva"
-            sudo docker pull "${IMAGE}" || err "pull falló"
+            sudo docker pull "\${IMAGE}" || err "pull falló"
           
-            step "2) Recrear servicio ${STACK}"
-            sudo docker compose -f "${PROJECT_DIR}/docker-compose.yml" up -d --no-deps --build ${STACK} \
+            step "2) Recrear servicio \${STACK}"
+            sudo docker compose -f "\${PROJECT_DIR}/docker-compose.yml" up -d --no-deps --build \${STACK} \
               || err "docker compose falló"
           
-            step "3) Health-check (${HEALTH})"
-            for i in {1..15}; do curl -fsSL "$HEALTH" && break || sleep 2; done
-            curl -fsSL "$HEALTH" >/dev/null || { err "Healthcheck falló"; }
+            step "3) Health-check (\${HEALTH})"
+            for i in {1..15}; do curl -fsSL "\$HEALTH" && break || sleep 2; done
+            curl -fsSL "\$HEALTH" >/dev/null || { err "Healthcheck falló"; }
           
             step "4) Limpiar capas antiguas"
-            sudo docker image prune -af -q
+            sudo docker image prune -af -q || true
           
             step "5) Recargar Nginx"
             sudo systemctl reload nginx
