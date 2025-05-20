@@ -9,8 +9,10 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMAGE_NAME: ontology-dp/frutas
-
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USER }}/frutas
+  STACK: frutas_frontend
+  PROJECT_DIR: /var/www/frutas_ontologia/dp
+  PORT: 8081
 
 jobs:
   build_and_test:
@@ -81,10 +83,10 @@ jobs:
         env:
           HOST: ${{ secrets.DEPLOY_HOST }}
           USER: ${{ secrets.DEPLOY_USER }}
-          PROJECT_DIR: /var/www/frutas_ontologia/dp
-          IMAGE_NAME: ${{ env.IMAGE_NAME }}
-          STACK: frutas_frontend    # nombre del servicio en docker-compose
-          PORT: 8081
+          IMAGE: ${{ env.IMAGE_NAME }}:latest
+          STACK: ${{ env.STACK }}
+          DIR: ${{ env.PROJECT_DIR }}
+          PORT: ${{ env.PORT }}
         run: |
           ssh -o StrictHostKeyChecking=no ${USER}@${HOST} /bin/bash <<'REMOTE'
             set -Eeuo pipefail
@@ -110,7 +112,7 @@ jobs:
             curl -fsSL "$HEALTH" >/dev/null || { err "Healthcheck falló"; }
           
             step "4) Limpiar capas antiguas"
-            sudo docker image prune -af -q || true
+            sudo docker image prune -af -q
           
             step "5) Recargar Nginx"
             sudo systemctl reload nginx
