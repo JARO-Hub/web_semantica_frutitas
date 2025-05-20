@@ -12,13 +12,14 @@ volumes:
 
 services:
 
-  angular-builder:
-    image: julianrodriguez/frutas:latest   # <-- aquí el nombre de la imagen que ya compilaste
+  frutas_frontend:
+    image: julianrrodriguez/frutas:latest
     container_name: frutas_frontend
+    restart: unless-stopped
     ports:
-      - "8081:80"                          # supongamos que tu Nginx interno sirve en 80
+      - "8081:80"
     environment:
-      - API_URL=http://api:5000           # o lo que necesite tu Angular para conectar al backend
+      - API_URL=http://api:5000
     depends_on:
       - redis
       - fuseki
