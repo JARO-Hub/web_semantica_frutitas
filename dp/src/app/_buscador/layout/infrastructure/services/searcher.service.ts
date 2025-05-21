@@ -89,7 +89,7 @@ private isLoading = signal(false);
     return lookup[name] || null;
   }
 
-  async buscar(nombre: string, lang: 'es'|'en') {
+  async buscar(nombre: string, lang: string) {
     this.isLoading.set(true); this.error.set(null);
     try {
       let frutas = await this.repository.buscarPorNombre(nombre.trim(), lang);
