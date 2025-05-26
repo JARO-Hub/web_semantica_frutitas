@@ -12,8 +12,8 @@ import { FRUTA_REPOSITORY, FrutaRepository } from "../../core/repositories/fruta
 export class SearcherComponent {
   query = '';
   queryText = '';
-  lang: 'es'|'en' = 'es';
-  language: 'es'|'en' = 'es';
+  lang: 'es'|'en'|'de'|'fr' = 'es';
+  language: 'es'|'en'|'de'|'fr' = 'es';
   resultsSignal: Signal<any>;
   results = signal<FrutaModel[]>([]);
   isLoading = signal(false);
@@ -29,7 +29,7 @@ export class SearcherComponent {
 
 
   async onSearch() {
-    await this.searcher.buscar(this.query, this.language);
+    await this.searcher.buscar(this.query, this.lang);
   }
 
 }

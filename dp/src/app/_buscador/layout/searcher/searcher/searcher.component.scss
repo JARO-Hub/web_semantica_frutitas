@@ -16,7 +16,19 @@ $border-radius: 0.75rem;
     border-top-right-radius: $border-radius;
     padding: 1rem 1.5rem;
 
-    .card-title {
+  }
+
+  &-body {
+    background-color: white;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    padding: 1rem 1.5rem;
+
+    app-responses {
+      display: block;
+    }
+
+     .card-title {
       font-size: 1.25rem;
       font-weight: 600;
       color: #3F4254;
@@ -32,7 +44,7 @@ $border-radius: 0.75rem;
         border: 1px solid #E4E6EF;
         border-radius: 0.5rem;
         padding: 0.5rem 0.75rem;
-        width: 240px;
+        width: 800px;
         transition: border-color 0.2s;
 
         &:focus {
@@ -45,7 +57,7 @@ $border-radius: 0.75rem;
         background-color: $input-bg;
         border: 1px solid #E4E6EF;
         border-radius: 0.5rem;
-        min-width: 120px;
+        width: 120px;
 
         &:focus {
           border-color: $primary;
@@ -57,17 +69,6 @@ $border-radius: 0.75rem;
         font-weight: 500;
         border-radius: 0.5rem;
       }
-    }
-  }
-
-  &-body {
-    background-color: white;
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    padding: 1rem 1.5rem;
-
-    app-responses {
-      display: block;
     }
   }
 }
