@@ -9,6 +9,7 @@ import { SearcherService } from "../infrastructure/services/searcher.service";
 import { FRUTA_REPOSITORY } from "../core/repositories/fruta.repository";
 import { SparqlFrutaRepository } from "../infrastructure/repositories/sparql-fruta.repository";
 import { SearchRoutingModule } from "./searcher-routing.module";
+import { ColorStatsTableComponent } from './responses/color-stats-table.component';
 import {
   MatCell,
   MatColumnDef,
@@ -28,7 +29,8 @@ import {HttpFusekiRepository} from "../infrastructure/repositories/http-fuseki.r
   declarations: [
     SearcherComponent,
     ResultadosComponent,
-
+    ColorStatsTableComponent,
+    
   ],
   imports: [
     CommonModule,

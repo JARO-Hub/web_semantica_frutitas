@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>URI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.label }}</td>
+      <td><a [href]="item.uri" target="_blank">{{ item.uri }}</a></td>
+    </tr>
+  </tbody>
+</table>
