@@ -1,4 +1,5 @@
 import { FrutaModel } from '../models/fruta.model';
+import { ColorStatsModel } from '../models/color-stats.model';
 import { InjectionToken } from "@angular/core";
 export type DBpediaInfo = { abstract?: string; thumbnail?: string };
 
@@ -11,8 +12,8 @@ export interface FrutaRepository {
    */
   buscarPorNombre(nombre: string, lang: string): Promise<FrutaModel[]>;
   buscarTodas(lang: string): Promise<FrutaModel[]>;
+  frutasPorColor(color: string, lang: string): Promise<ColorStatsModel[]>;
   info(nombre: string, lang: string): Promise<DBpediaInfo>;
 }
-
 
 export const FRUTA_REPOSITORY = new InjectionToken<FrutaRepository>('FrutaRepository');

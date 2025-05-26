@@ -20,6 +20,8 @@ export class SearcherComponent {
   error = signal<string|null>(null);
 
   frutas    = () => this.searcher.resultados();
+  frutasColor = () => this.searcher.resultadosColor();
+
   constructor(
     private searcher: SearcherService,
     @Inject(FRUTA_REPOSITORY) private repository: FrutaRepository

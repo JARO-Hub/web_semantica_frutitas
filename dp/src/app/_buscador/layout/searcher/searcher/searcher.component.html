@@ -23,7 +23,17 @@
   </div>
   <div class="card-body">
     <!-- card-body -->
-    <app-results-table [data]="frutas()"></app-results-table>
+    <!-- Mostrar resultados por color -->
+     <!-- Mostrar resultados por color -->
+    <app-color-stats-table
+      *ngIf="frutasColor()?.length"
+      [data]="frutasColor() || []">
+    </app-color-stats-table>
+    <!-- Mostrar resultados normales -->
+    <app-results-table
+      *ngIf="!frutasColor() && frutas().length"
+      [data]="frutas()">
+    </app-results-table>
     <div *ngIf="isLoading()">Cargando…</div>
     <div *ngIf="error()" class="text-danger">{{ error() }}</div>
   </div>

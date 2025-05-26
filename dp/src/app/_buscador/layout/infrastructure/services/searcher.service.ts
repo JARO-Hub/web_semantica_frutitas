@@ -4,8 +4,11 @@ import { Observable, of } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { environment } from '../../../../../environments/environment';
 import { FrutaModel } from "../../core/models/fruta.model";
+import { ColorStatsModel } from '../../core/models/color-stats.model';
 import { FRUTA_REPOSITORY, FrutaRepository } from "../../core/repositories/fruta.repository";
 import {FUSEKI_REPOSITORY, FusekiRepository} from "../../core/repositories/fuseki.repository";
+import { ColorQueryMapperService } from '../services/color-query-mapper.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,8 @@ export class SearcherService {
 
   private searchResults = signal<any>(null);
   public resultados = signal<FrutaModel[]>([]);
-private isLoading = signal(false);
+  public resultadosColor = signal<ColorStatsModel[] | null>(null);/*color*/
+  private isLoading = signal(false);
   error = signal<string|null>(null);
 
 
@@ -25,7 +29,9 @@ private isLoading = signal(false);
     private repository: FrutaRepository,
 
     @Inject(FUSEKI_REPOSITORY)
-    private fusekiRepository: FusekiRepository
+    private fusekiRepository: FusekiRepository,
+
+    private colorMapper: ColorQueryMapperService
   ) {
 
   }
@@ -89,27 +95,41 @@ private isLoading = signal(false);
     return lookup[name] || null;
   }
 
-  async buscar(nombre: string, lang: 'es'|'en') {
-    this.isLoading.set(true); this.error.set(null);
+  async buscar(nombre: string, lang: 'es' | 'en') {
+    this.isLoading.set(true);
+    this.error.set(null);
+
     try {
+      // Paso 1: detectar si la búsqueda es por color
+      const colorMapped = this.colorMapper.map(nombre);
+      if (colorMapped) {
+        const resultados = await this.repository.frutasPorColor(colorMapped.value, lang);
+        this.resultadosColor.set(resultados);
+        this.resultados.set([]); // limpia los resultados normales
+        return;
+      }
+
+      // Paso 2: búsqueda tradicional por nombre
       let frutas = await this.repository.buscarPorNombre(nombre.trim(), lang);
       if (!frutas.length) {
         frutas = await this.repository.buscarTodas(lang);
       }
 
-      // Paralelizamos llamadas a DBpedia con forkJoin
       const info$ = frutas.map(f =>
         this.repository.info(f.nombre, lang).then(info => ({ f, info }))
       );
       const enriquecidas = await Promise.all(info$);
 
       this.resultados.set(
-        enriquecidas.map(({f,info}) => ({ ...f, ...info }))
+        enriquecidas.map(({ f, info }) => ({ ...f, ...info }))
       );
+      this.resultadosColor.set(null); // limpia los resultados de color
+
     } catch (e) {
       console.error(e);
       this.error.set('Error al buscar');
       this.resultados.set([]);
+      this.resultadosColor.set(null);
     } finally {
       this.isLoading.set(false);
     }

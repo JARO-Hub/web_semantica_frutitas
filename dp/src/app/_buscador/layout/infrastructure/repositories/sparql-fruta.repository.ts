@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { DBpediaInfo, FrutaRepository } from "src/app/_buscador/layout/core/repositories/fruta.repository";
 import { FrutaModel } from "src/app/_buscador/layout/core/models/fruta.model";
+import { ColorStatsModel } from "src/app/_buscador/layout/core/models/color-stats.model"; /*--color model--*/
 import { environment } from "../../../../../environments/environment";
 import { firstValueFrom, lastValueFrom } from "rxjs";
 
@@ -26,11 +27,13 @@ export class SparqlFrutaRepository implements FrutaRepository {
 
   /* ---------- 2. buscarTodas ------------------------------------------- */
   async buscarTodas(lang: string): Promise<FrutaModel[]> {
-    const fuseki = await this.consultaFuseki(this.fusekiTodas(lang));
+    const fuseki:SparqlJSON= await this.consultaFuseki(this.fusekiTodas(lang));
     const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
     await this.enriquecerConDbpedia(frutas, lang);
     return frutas;
   }
+
+
 
   /* ---------- 3. info (por nombre)  ------------------------------------ */
   async info(nombre: string, lang: string): Promise<DBpediaInfo> {
@@ -43,6 +46,17 @@ export class SparqlFrutaRepository implements FrutaRepository {
     return first
       ? { abstract: first.abstract?.value, thumbnail: first.thumbnail?.value }
       : {};
+  }
+
+  /*---- color ----*/
+  async frutasPorColor(color: string, lang: string): Promise<ColorStatsModel[]> {
+    const query = this.dbpediaPorColor(color, lang); //  usa el método aquí
+    const response = await this.sendSparql(this.DBPEDIA_URL, query) as SparqlJSON;
+
+    return response.results.bindings.map((b) => ({
+      uri: b.uri.value,
+      label: b.label.value,
+    }));
   }
 
   /* ====================== helpers ===================== */
@@ -95,6 +109,25 @@ export class SparqlFrutaRepository implements FrutaRepository {
         OPTIONAL { <http://dbpedia.org/resource/${recurso}> dbo:thumbnail ?thumbnail }
       } LIMIT 1`;
   }
+
+  private dbpediaPorColor(color: string, lang: string): string {
+  return `
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT DISTINCT ?uri ?label
+    WHERE {
+      ?uri a dbo:Fruit ;
+           dbo:colour ?colour ;
+           rdfs:label ?label .
+
+      FILTER(LANG(?label) = "${lang}")
+      FILTER(CONTAINS(LCASE(STR(?colour)), "${color.toLowerCase()}"))
+    }
+    LIMIT 50
+  `;
+}
+
 
   /*  Enriquecer los modelos locales con datos de DBpedia  */
   private async enriquecerConDbpedia(frutas: FrutaModel[], lang: string): Promise<void> {
