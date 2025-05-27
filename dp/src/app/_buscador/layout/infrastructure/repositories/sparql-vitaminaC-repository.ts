@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { firstValueFrom } from 'rxjs';
 import { FrutaModel } from 'src/app/_buscador/layout/core/models/fruta.model';
 import { DBpediaInfo, FrutaRepository } from 'src/app/_buscador/layout/core/repositories/fruta.repository';
+import { ColorStatsModel } from "src/app/_buscador/layout/core/models/color-stats.model"; /*--color model--*/
 
 export type SparqlJSON = {
   results: { bindings: any[] };
@@ -23,6 +24,34 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
     await this.enriquecerConDbpedia(frutas, lang);
     return frutas;
   }
+
+  async frutasPorColor(color: string, lang: string): Promise<ColorStatsModel[]> {
+      const query = this.dbpediaPorColor(color, lang); //  usa el método aquí
+      const response = await this.sendSparql(this.DBPEDIA_URL, query) as SparqlJSON;
+  
+      return response.results.bindings.map((b) => ({
+        uri: b.uri.value,
+        label: b.label.value,
+      }));
+    }
+
+     private dbpediaPorColor(color: string, lang: string): string {
+  return `
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT DISTINCT ?uri ?label
+    WHERE {
+      ?uri a dbo:Fruit ;
+           dbo:colour ?colour ;
+           rdfs:label ?label .
+
+      FILTER(LANG(?label) = "${lang}")
+      FILTER(CONTAINS(LCASE(STR(?colour)), "${color.toLowerCase()}"))
+    }
+    LIMIT 50
+  `;
+}
 
   async buscarPorNombre(nombre: string, lang: string): Promise<FrutaModel[]> {
     throw new Error("buscarPorNombre no es soportado en SparqlFrutasRicasRepository.");
