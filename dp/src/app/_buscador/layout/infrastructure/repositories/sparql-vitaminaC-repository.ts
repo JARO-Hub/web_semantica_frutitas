@@ -6,6 +6,7 @@ import { FrutaModel } from 'src/app/_buscador/layout/core/models/fruta.model';
 import { DBpediaInfo, FrutaRepository } from 'src/app/_buscador/layout/core/repositories/fruta.repository';
 import { ColorStatsModel } from "src/app/_buscador/layout/core/models/color-stats.model"; /*--color model--*/
 
+
 export type SparqlJSON = {
   results: { bindings: any[] };
 };
@@ -17,6 +18,17 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
   private readonly DBPEDIA_URL = 'https://dbpedia.org/sparql';
 
   constructor(private http: HttpClient) {}
+
+  async frutasRicasEnVitaminaC(lang: string, umbral: number): Promise<FrutaModel[]> {
+    // Ejecuta la consulta SPARQL con filtro dinámico
+    const fusekiResult = await this.consultaFuseki(this.queryFrutasRicas(lang));
+    const frutas = this.mapBindingsToFrutas(fusekiResult.results.bindings)
+    // Enriquecer con datos de DBpedia (abstract, thumbnail)
+    await this.enriquecerConDbpedia(frutas, lang);
+    return frutas;
+  }
+
+  
 
   async buscarTodas(lang: string): Promise<FrutaModel[]> {
     const fuseki = await this.consultaFuseki(this.queryFrutasRicas(lang));
@@ -68,9 +80,9 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
 
   /* ==================== HELPERS ==================== */
 
-  private async consultaFuseki(query: string): Promise<SparqlJSON> {
-    return this.sendSparql(this.FUSEKI_URL, query) as Promise<SparqlJSON>;
-  }
+  //private async consultaFuseki(query: string): Promise<SparqlJSON> {
+    //return this.sendSparql(this.FUSEKI_URL, query) as Promise<SparqlJSON>;
+  //}
 
   private async sendSparql(endpoint: string, query: string): Promise<SparqlJSON> {
     const body = new HttpParams().set('query', query);
@@ -107,6 +119,31 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
       } LIMIT 10`;
   }
 
+   // 21:07 Envia la consulta SPARQL al endpoint Fuseki y devuelve los resultados JSON.
+  private async consultaFuseki(query: string): Promise<SparqlJSON> {
+    const body = new HttpParams().set('query', query);
+    const headers = { Accept: 'application/sparql-results+json' };
+    return firstValueFrom(this.http.post<SparqlJSON>(this.FUSEKI_URL, body, { headers }));
+  }
+
+  // Mapea los bindings SPARQL a objetos FrutaModel.
+  private mapBindingsToFrutas(bindings: any[]): FrutaModel[] {
+    const map = new Map<string, FrutaModel>();
+    bindings.forEach(b => {
+      const uri = b.fruit.value;
+      const nombre = uri.split('#').pop()!;
+      let fruta = map.get(uri);
+      if (!fruta) {
+        fruta = { uri, nombre };
+        map.set(uri, fruta);
+      }
+      const prop = b.prop.value.split('#').pop();
+      if (prop === 'cantidadVitaminaC') fruta.vitC = +b.val.value;
+      if (prop === 'indiceORAC')       fruta.orac = +b.val.value;
+    });
+    return [...map.values()];
+  }
+
   private async enriquecerConDbpedia(frutas: FrutaModel[], lang: string): Promise<void> {
     await Promise.all(frutas.map(async (f) => {
       try {
@@ -122,7 +159,7 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
     }));
   }
 
-  private mapBindingsToFrutas(bindings: any[]): FrutaModel[] {
+  /* private mapBindingsToFrutas(bindings: any[]): FrutaModel[] {
     const map = new Map<string, FrutaModel>();
     bindings.forEach(b => {
       const uri = b.fruit.value;
@@ -138,4 +175,5 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
     });
     return [...map.values()];
   }
+  */
 }

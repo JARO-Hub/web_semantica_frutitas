@@ -9,7 +9,8 @@ import { FRUTA_REPOSITORY, FrutaRepository } from "../../core/repositories/fruta
 import {FUSEKI_REPOSITORY, FusekiRepository} from "../../core/repositories/fuseki.repository";
 import { ColorQueryMapperService } from '../services/color-query-mapper.service';
 import { StringToken } from "@angular/compiler";
-
+import { VitaminCQueryMapperService } from '../services/VitaminCQueryMapperService';
+import { SparqlFrutasRicasRepository } from '../repositories/sparql-vitaminaC-repository';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,8 @@ export class SearcherService {
     @Inject(FUSEKI_REPOSITORY)
     private fusekiRepository: FusekiRepository,
 
-    private colorMapper: ColorQueryMapperService
+    private colorMapper: ColorQueryMapperService,
+    private vitaminCMapper: VitaminCQueryMapperService
   ) {
 
   }
@@ -110,6 +112,16 @@ export class SearcherService {
         return;
       }
 
+      //VITAMINAC
+      const vitCMap = this.vitaminCMapper.map(nombre);
+      if (vitCMap) {
+        // Llama al nuevo método del repositorio con el umbral detectado
+        const resultados = await this.repository.frutasRicasEnVitaminaC(lang, vitCMap.value);
+        this.resultados.set(resultados);
+        this.resultadosColor.set(null);
+        return;
+      }
+
       // Paso 2: búsqueda tradicional por nombre
       let frutas = await this.repository.buscarPorNombre(nombre.trim(), lang);
       if (!frutas.length) {
@@ -119,6 +131,7 @@ export class SearcherService {
       const info$ = frutas.map(f =>
         this.repository.info(f.nombre, lang).then(info => ({ f, info }))
       );
+
       const enriquecidas = await Promise.all(info$);
 
       this.resultados.set(
