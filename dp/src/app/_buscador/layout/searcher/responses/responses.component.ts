@@ -25,4 +25,19 @@ export class ResultadosComponent implements OnChanges {
     this.dataSource.data = this.data;
     if (this.paginator) { this.dataSource.paginator = this.paginator; }
   }
+
+  expandedItems: Set<number> = new Set();
+
+  isExpanded(index: number): boolean {
+    return this.expandedItems.has(index);
+  }
+
+  toggleExpand(index: number): void {
+    if (this.expandedItems.has(index)) {
+      this.expandedItems.delete(index);
+    } else {
+      this.expandedItems.add(index);
+    }
+  }
+
 }

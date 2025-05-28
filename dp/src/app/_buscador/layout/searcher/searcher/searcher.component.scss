@@ -1,4 +1,4 @@
-/* src/app/_buscador/layout/searcher/components/searcher/searcher.component.scss */
+/*src/app/_buscador/layout/searcher/components/searcher/searcher.component.scss */
 
 $primary: #3699FF;
 $input-bg: #F3F6F9;
@@ -15,6 +15,28 @@ $border-radius: 0.75rem;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
     padding: 1rem 1.5rem;
+    
+     &.logo-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: -0.5px; 
+      font-family: 'Arial Black', 'Segoe UI Black', 'Impact', sans-serif;
+      margin-left: 0.5rem;
+    }
 
   }
 
@@ -26,12 +48,6 @@ $border-radius: 0.75rem;
 
     app-responses {
       display: block;
-    }
-
-     .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #3F4254;
     }
 
     .search-controls {

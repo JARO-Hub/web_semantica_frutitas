@@ -12,6 +12,7 @@ export class ColorQueryMapperService {
   };
 
   map(input: string): { type: 'color'; value: string } | null {
+    debugger;
     const match = input.match(/frutas (amarillas|rojas|verdes|azules)/i);
     if (match) {
       const colorEsp = match[1].toLowerCase();
