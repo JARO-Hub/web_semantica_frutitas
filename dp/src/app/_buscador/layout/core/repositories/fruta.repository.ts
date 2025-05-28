@@ -12,7 +12,7 @@ export interface FrutaRepository {
    */
   buscarPorNombre(nombre: string, lang: string): Promise<FrutaModel[]>;
   buscarTodas(lang: string): Promise<FrutaModel[]>;
-  frutasPorColor(color: string, lang: string): Promise<ColorStatsModel[]>;
+  frutasPorColor(color: string, lang: string): Promise<FrutaModel[]>;
   info(nombre: string, lang: string): Promise<DBpediaInfo>;
   //PRUEBA ELIMINAT
   frutasRicasEnVitaminaC(lang: string, umbral: number): Promise<FrutaModel[]>;

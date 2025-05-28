@@ -19,7 +19,7 @@ export class SearcherService {
 
   private searchResults = signal<any>(null);
   public resultados = signal<FrutaModel[]>([]);
-  public resultadosColor = signal<ColorStatsModel[] | null>(null);/*color*/
+  public resultadosColor = signal<FrutaModel[] | null>(null);
   private isLoading = signal(false);
   error = signal<string|null>(null);
 

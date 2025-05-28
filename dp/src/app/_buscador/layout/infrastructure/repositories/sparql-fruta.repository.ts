@@ -48,23 +48,40 @@ export class SparqlFrutaRepository implements FrutaRepository {
       : {};
   }
 
-  /*---- color ----*/
-  async frutasPorColor(color: string, lang: string): Promise<ColorStatsModel[]> {
-    const query = this.dbpediaPorColor(color, lang); //  usa el método aquí
-    const response = await this.sendSparql(this.DBPEDIA_URL, query) as SparqlJSON;
-
-    return response.results.bindings.map((b) => ({
-      uri: b.uri.value,
-      label: b.label.value,
-    }));
+  /*---- frutas por color desde Fuseki ----*/
+  async frutasPorColor(color: string, lang: string): Promise<FrutaModel[]> {
+    const query = this.fusekiPorColor(color, lang);
+    const fuseki = await this.consultaFuseki(query) as SparqlJSON;
+    const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
+    await this.enriquecerConDbpedia(frutas, lang); // opcional
+    return frutas;
   }
+
+  private fusekiPorColor(color: string, lang: string): string {
+    return `
+      PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+
+      SELECT ?fruit ?color ?prop ?val
+      WHERE {
+        ?fruit a :Fruta ;
+              :colorDeFruta ?color .
+        OPTIONAL { ?fruit :cantidadVitaminaC ?vitaminaC . }
+        OPTIONAL { ?fruit :indiceORAC ?indiceORAC . }
+
+        ?fruit ?prop ?val .
+
+        FILTER(lcase(str(?color)) = "${color}")
+      }
+    `;
+  }
+
 
   //Esto es reciente
   async frutasRicasEnVitaminaC(lang: string, umbral: number): Promise<FrutaModel[]>{
     const fuseki = await this.consultaFuseki(this.fusekiFrutasRicas(lang, umbral));
-  const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
-  await this.enriquecerConDbpedia(frutas, lang);
-  return frutas;
+    const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
+    await this.enriquecerConDbpedia(frutas, lang);
+    return frutas;
   }
 
   private fusekiFrutasRicas(lang: string, umbral: number): string {
@@ -132,24 +149,6 @@ export class SparqlFrutaRepository implements FrutaRepository {
         OPTIONAL { <http://dbpedia.org/resource/${recurso}> dbo:thumbnail ?thumbnail }
       } LIMIT 1`;
   }
-
-  private dbpediaPorColor(color: string, lang: string): string {
-  return `
-    PREFIX dbo: <http://dbpedia.org/ontology/>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-    SELECT DISTINCT ?uri ?label
-    WHERE {
-      ?uri a dbo:Fruit ;
-           dbo:colour ?colour ;
-           rdfs:label ?label .
-
-      FILTER(LANG(?label) = "${lang}")
-      FILTER(CONTAINS(LCASE(STR(?colour)), "${color.toLowerCase()}"))
-    }
-    LIMIT 50
-  `;
-}
 
 
   /*  Enriquecer los modelos locales con datos de DBpedia  */
