@@ -81,6 +81,31 @@ export class SparqlFrutaRepository implements FrutaRepository {
     }
   `;
 }
+/*indice orac*/
+// Nueva función para frutas con alto índice ORAC
+async frutasRicasEnIndiceORAC(lang: string, umbral: number): Promise<FrutaModel[]> {
+  const fuseki = await this.consultaFuseki(this.fusekiFrutasRicasEnIndiceORAC(lang, umbral));
+  const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
+  await this.enriquecerConDbpedia(frutas, lang);
+  return frutas;
+}
+
+private fusekiFrutasRicasEnIndiceORAC(lang: string, umbral: number): string {
+  return `
+    PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+
+    SELECT ?fruit ?prop ?val
+    WHERE {
+      ?fruit a :Fruta ;
+             :indiceORAC ?val ;
+             ?prop ?val .
+      FILTER(?val >= ${umbral})
+      VALUES ?prop { :indiceORAC }
+    }
+      ORDER BY DESC(?val)
+  `;
+}
+
   
   /* ====================== helpers ===================== */
   private async consultaFuseki(q: string) {

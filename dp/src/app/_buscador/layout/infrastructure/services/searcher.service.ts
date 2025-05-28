@@ -10,6 +10,7 @@ import {FUSEKI_REPOSITORY, FusekiRepository} from "../../core/repositories/fusek
 import { ColorQueryMapperService } from '../services/color-query-mapper.service';
 import { StringToken } from "@angular/compiler";
 import { VitaminCQueryMapperService } from '../services/VitaminCQueryMapperService';
+import { IndiceORACQueryMapperService } from '../services/indice-orac-query-mapper.service';
 import { SparqlFrutasRicasRepository } from '../repositories/sparql-vitaminaC-repository';
 
 @Injectable({
@@ -34,7 +35,8 @@ export class SearcherService {
     private fusekiRepository: FusekiRepository,
 
     private colorMapper: ColorQueryMapperService,
-    private vitaminCMapper: VitaminCQueryMapperService
+    private vitaminCMapper: VitaminCQueryMapperService,
+    private indiceOracMapper: IndiceORACQueryMapperService
   ) {
 
   }
@@ -121,6 +123,14 @@ export class SearcherService {
         this.resultadosColor.set(null);
         return;
       }
+      const oracMap = this.indiceOracMapper.map(nombre);
+      if (oracMap) {
+        const resultados = await this.repository.frutasRicasEnIndiceORAC(lang, oracMap.value);
+        this.resultados.set(resultados);
+        this.resultadosColor.set(null);
+        return;
+      }
+      
 
       // Paso 2: búsqueda tradicional por nombre
       let frutas = await this.repository.buscarPorNombre(nombre.trim(), lang);
