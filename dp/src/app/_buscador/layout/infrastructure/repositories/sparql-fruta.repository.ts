@@ -59,6 +59,29 @@ export class SparqlFrutaRepository implements FrutaRepository {
     }));
   }
 
+  //Esto es reciente
+  async frutasRicasEnVitaminaC(lang: string, umbral: number): Promise<FrutaModel[]>{
+    const fuseki = await this.consultaFuseki(this.fusekiFrutasRicas(lang, umbral));
+  const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
+  await this.enriquecerConDbpedia(frutas, lang);
+  return frutas;
+  }
+
+  private fusekiFrutasRicas(lang: string, umbral: number): string {
+  return `
+    PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+
+    SELECT ?fruit ?prop ?val
+    WHERE {
+      ?fruit a :Fruta ;
+             :cantidadVitaminaC ?val ;
+             ?prop ?val .
+      FILTER(?val >= ${umbral})
+      VALUES ?prop { :cantidadVitaminaC :indiceORAC }
+    }
+  `;
+}
+  
   /* ====================== helpers ===================== */
   private async consultaFuseki(q: string) {
     return this.sendSparql(this.FUSEKI_URL, q) as Promise<SparqlJSON>;
