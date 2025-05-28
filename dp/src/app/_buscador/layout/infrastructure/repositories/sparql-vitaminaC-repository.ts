@@ -37,33 +37,28 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
     return frutas;
   }
 
-  async frutasPorColor(color: string, lang: string): Promise<ColorStatsModel[]> {
-      const query = this.dbpediaPorColor(color, lang); //  usa el método aquí
-      const response = await this.sendSparql(this.DBPEDIA_URL, query) as SparqlJSON;
+  /*---- frutas por color desde Fuseki ----*/
+    async frutasPorColor(color: string, lang: string): Promise<FrutaModel[]> {
+      const query = this.fusekiPorColor(color, lang);
+      const fuseki = await this.consultaFuseki(query) as SparqlJSON;
+      const frutas = this.mapBindingsToFrutas(fuseki.results.bindings);
+      await this.enriquecerConDbpedia(frutas, lang); // opcional
+      return frutas;
+    }
   
-      return response.results.bindings.map((b) => ({
-        uri: b.uri.value,
-        label: b.label.value,
-      }));
+    private fusekiPorColor(color: string, lang: string): string {
+      return `
+        PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+
+        SELECT ?fruit ?color ?vitaminaC ?indiceORAC
+        WHERE {
+          ?fruit a :Fruta ;
+                :colorDeFruta ?color .
+          OPTIONAL { ?fruit :cantidadVitaminaC ?vitaminaC . }
+          OPTIONAL { ?fruit :indiceORAC ?indiceORAC . }
+        }
+      `;
     }
-
-     private dbpediaPorColor(color: string, lang: string): string {
-  return `
-    PREFIX dbo: <http://dbpedia.org/ontology/>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-    SELECT DISTINCT ?uri ?label
-    WHERE {
-      ?uri a dbo:Fruit ;
-           dbo:colour ?colour ;
-           rdfs:label ?label .
-
-      FILTER(LANG(?label) = "${lang}")
-      FILTER(CONTAINS(LCASE(STR(?colour)), "${color.toLowerCase()}"))
-    }
-    LIMIT 50
-  `;
-}
 
   async buscarPorNombre(nombre: string, lang: string): Promise<FrutaModel[]> {
     throw new Error("buscarPorNombre no es soportado en SparqlFrutasRicasRepository.");

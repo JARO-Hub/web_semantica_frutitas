@@ -47,11 +47,11 @@
   <div class="card-body">
     <!-- card-body -->
     <!-- Mostrar resultados por color -->
-     <!-- Mostrar resultados por color -->
-    <app-color-stats-table
+    <!-- Mostrar resultados por color -->
+    <app-results-table
       *ngIf="frutasColor()?.length"
       [data]="frutasColor() || []">
-    </app-color-stats-table>
+    </app-results-table>
     <!-- Mostrar resultados normales -->
     <app-results-table
       *ngIf="!frutasColor() && frutas().length"
