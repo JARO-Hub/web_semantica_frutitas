@@ -38,14 +38,45 @@
   .abstract {
     margin: 0.25rem 0;
     color: #111111;
-    font-size: 1.00rem;
+    font-size: 1rem;
 
     display: -webkit-box;        
-    -webkit-line-clamp: 3;      
+
+    -webkit-line-clamp: 3;   
+    line-clamp: 3;           
+  
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+      line-clamp: unset; 
+      overflow: visible;
+    }
+ }
+
+ .btn-toggle.link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0645ad;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: inherit;
+  &:hover {
+    color: #0b0080;
   }
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
 
   /* Información adicional */
   .extras {

@@ -1,9 +1,20 @@
 <div class="results-container" *ngIf="dataSource?.data?.length; else noResults">
-  <div *ngFor="let f of dataSource.data" class="result-card">
+  <div *ngFor="let f of dataSource.data; let i = index" class="result-card">
     <img *ngIf="f.thumbnail" [src]="f.thumbnail" alt="{{f.nombre}}" class="thumb" />
     <div class="result-content">
       <h4 class="nombre">{{ f.nombre }}</h4>
-      <p class="abstract">{{ f.abstract || '—' }}</p>
+
+       <p class="abstract" [class.expanded]="isExpanded(i)">
+        {{ f.abstract || '—' }}
+       </p>
+
+       <button 
+       *ngIf="(f.abstract?.length ?? 0) > 150" 
+       (click)="toggleExpand(i)" 
+       class="btn-toggle link">
+       {{ isExpanded(i) ? 'Menos' : 'Más' }}
+       </button>
+
       <div class="extras">
         <span><strong>Vit. C:</strong> {{ f.vitC ?? '—' }} mg/100g</span>
         <span><strong>ORAC:</strong> {{ f.orac ?? '—' }}</span>
