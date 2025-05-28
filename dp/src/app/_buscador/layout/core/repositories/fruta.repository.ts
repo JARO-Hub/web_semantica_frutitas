@@ -16,6 +16,7 @@ export interface FrutaRepository {
   info(nombre: string, lang: string): Promise<DBpediaInfo>;
   //PRUEBA ELIMINAT
   frutasRicasEnVitaminaC(lang: string, umbral: number): Promise<FrutaModel[]>;
+  frutasRicasEnIndiceORAC(lang: string, umbral: number): Promise<FrutaModel[]>;
 }
 
 export const FRUTA_REPOSITORY = new InjectionToken<FrutaRepository>('FrutaRepository');
