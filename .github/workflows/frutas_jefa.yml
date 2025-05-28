@@ -55,7 +55,7 @@ jobs:
             ${{ env.IMAGE_NAME }}:latest
             ${{ env.IMAGE_NAME }}:${{ github.sha }}
   deploy:
-    needs: build_and_test
+    needs: build_and_push
     runs-on: ubuntu-latest
     if: ${{ success() }}
     steps:
