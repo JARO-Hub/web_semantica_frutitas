@@ -716,6 +716,21 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Açaí_palm -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Açaí_palm">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antocianina"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Baya"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</cantidadVitaminaC>
+        <esComestible>true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15300</indiceORAC>
+        <rdfs:label xml:lang="en">Açaí_palm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Baya -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Baya">
@@ -856,6 +871,21 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Guava -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Guava">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#mermelada"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Winter"/>
+        <colorDeFruta>red</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>candy</saborDefruta>
+        <saborDefruta>juicy</saborDefruta>
+        <rdfs:label xml:lang="en">Guava</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Invierno -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Invierno">
@@ -985,6 +1015,22 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pear -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pear">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminC"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Winter"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Pepa"/>
+        <colorDeFruta>green</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>candy</saborDefruta>
+        <texturaDeFruta>juicy</texturaDeFruta>
+        <rdfs:label xml:lang="en"></rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Pepa -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pepa">
@@ -1087,9 +1133,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Vaccinium_corymbosum">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</cantidadVitaminaC>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9621</indiceORAC>
+        <rdfs:label xml:lang="en">Vaccinium_corymbosum</rdfs:label>
+        <rdfs:label xml:lang="es">Vaccinium_corymbosum</rdfs:label>
     </owl:NamedIndividual>
     
 
