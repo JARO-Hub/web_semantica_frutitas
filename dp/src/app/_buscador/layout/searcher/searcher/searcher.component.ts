@@ -84,6 +84,7 @@ export class SearcherComponent implements OnInit {
 
   changeLang(lang: 'en' | 'es' | 'de' | 'fr') {
     this.i18n.use(lang);
+    this.lang = lang;
    // actualizamos también la propiedad local si la necesitas
   }
 
@@ -99,6 +100,7 @@ export class SearcherComponent implements OnInit {
       this.isLoading.set(false);
     }
   }
+
   async onSearch(): Promise<void> {
 
     // Volvemos a mostrarlo

@@ -28,7 +28,7 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
     return frutas;
   }
 
-  
+
 
   async buscarTodas(lang: string): Promise<FrutaModel[]> {
     const fuseki = await this.consultaFuseki(this.queryFrutasRicas(lang));
@@ -45,17 +45,20 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
       await this.enriquecerConDbpedia(frutas, lang); // opcional
       return frutas;
     }
-  
+
     private fusekiPorColor(color: string, lang: string): string {
       return `
         PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-        SELECT ?fruit ?color ?vitaminaC ?indiceORAC
+        SELECT ?fruit ?label ?color ?vitaminaC ?indiceORAC
         WHERE {
           ?fruit a :Fruta ;
+          rdfs:label ?label ;
                 :colorDeFruta ?color .
           OPTIONAL { ?fruit :cantidadVitaminaC ?vitaminaC . }
           OPTIONAL { ?fruit :indiceORAC ?indiceORAC . }
+          FILTER( lang(?label) = "${lang}" )
         }
       `;
     }
@@ -76,14 +79,17 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
   async frutasRicasEnIndiceORAC(lang: string, umbral: number): Promise<FrutaModel[]> {
   const query = `
     PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    SELECT ?fruit ?prop ?val
+    SELECT ?fruit ?label ?prop ?val
     WHERE {
       ?fruit a :Fruta ;
+              rdfs:label ?label ;
              :indiceORAC ?val ;
              ?prop ?val .
       FILTER(?val >= ${umbral})
       VALUES ?prop { :indiceORAC }
+      FILTER( lang(?label) = "${lang}" )
     }
   `;
   const fusekiResult = await this.consultaFuseki(query);
@@ -109,14 +115,17 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
   private queryFrutasRicas(lang: string): string {
     return `
       PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-      SELECT ?fruit ?prop ?val
+      SELECT ?fruit ?label ?prop ?val
       WHERE {
         ?fruit a :Fruta ;
+                rdfs:label ?label ;
                :cantidadVitaminaC ?val ;
                ?prop ?val .
         FILTER(?val >= 50)
         VALUES ?prop { :cantidadVitaminaC :indiceORAC }
+        FILTER( lang(?label) = "${lang}" )
       }
     `;
   }
@@ -168,7 +177,7 @@ export class SparqlFrutasRicasRepository implements FrutaRepository {
           f.thumbnail = first.thumbnail?.value;
         }
       } catch {
-        
+
       }
     }));
   }

@@ -30,6 +30,8 @@ import {HeaderComponent} from "../components/header/header.component";
 import {AsideComponent} from "../components/aside/aside.component";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslationService} from "../../../modules/i18n";
+import {TRANSLATOR_REPOSITORY} from "../core/repositories/cloud-trans.repository";
+import {GoogleCloudtransRepository} from "../infrastructure/repositories/google-cloudtrans.repository";
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -72,6 +74,10 @@ export function httpLoaderFactory(http: HttpClient) {
     {
       provide: FUSEKI_REPOSITORY,
       useClass: HttpFusekiRepository
+    },
+    {
+      provide: TRANSLATOR_REPOSITORY,
+      useClass: GoogleCloudtransRepository
     },
     TranslationService
 

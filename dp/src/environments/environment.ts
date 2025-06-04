@@ -8,6 +8,7 @@ export const environment = {
   USERDATA_KEY: 'authf649fc9a5f55',
   isMockEnabled: true,
   apiUrl: 'aping',
+  apikeytraductor: 'AIzaSyBxlpj7KqkKUYGjf9ypsL5nHPIkZyQZ3kY',
   appThemeName: 'Metronic',
   fusekiApiUrl: 'http://localhost:3030',
   fusekiUser: 'julian',

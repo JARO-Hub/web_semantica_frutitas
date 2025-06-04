@@ -12,6 +12,7 @@ import { StringToken } from "@angular/compiler";
 import { VitaminCQueryMapperService } from '../services/VitaminCQueryMapperService';
 import { IndiceORACQueryMapperService } from '../services/indice-orac-query-mapper.service';
 import { SparqlFrutasRicasRepository } from '../repositories/sparql-vitaminaC-repository';
+import {CloudTransRepository, TRANSLATOR_REPOSITORY} from "../../core/repositories/cloud-trans.repository";
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,9 @@ export class SearcherService {
 
     @Inject(FUSEKI_REPOSITORY)
     private fusekiRepository: FusekiRepository,
+
+    @Inject(TRANSLATOR_REPOSITORY)
+    private translatorRepository: CloudTransRepository,
 
     private colorMapper: ColorQueryMapperService,
     private vitaminCMapper: VitaminCQueryMapperService,
@@ -100,16 +104,57 @@ export class SearcherService {
     return lookup[name] || null;
   }
 
+  decodeHtml(html: string): string {
+    // Creamos dinámicamente un elemento <textarea> que no se anexa al DOM.
+    const textarea = document.createElement('textarea');
+    textarea.className = 'd-none';
+    textarea.innerHTML = html;
+    // Al leer textarea.value, ya obtienes la cadena con las entidades resueltas.
+    return textarea.value;
+  }
+
+
   async buscar(nombre: string, lang: string) {
     this.isLoading.set(true);
     this.error.set(null);
 
+
+    if (lang !== 'es') {
+      // Si el nombre no está en español, lo traducimos
+      try {
+        // si nombre es mas de una palabra lo traducimos
+        if ( nombre.includes(' ')) {
+          // Si es una frase, la traducimos completa
+          nombre = await this.translatorRepository.translate(nombre, 'es');
+          nombre = this.decodeHtml(nombre);
+        }else{
+          nombre = nombre;
+        }
+
+
+      } catch (e) {
+        console.error('Error al traducir:', e);
+        this.error.set('Error al traducir el nombre');
+        this.isLoading.set(false);
+        return;
+      }
+    }
+
+
     try {
+
       // Paso 1: detectar si la búsqueda es por color
       const colorMapped = this.colorMapper.map(nombre, lang);
       if (colorMapped) {
-        const resultados = await this.repository.frutasPorColor(colorMapped.value, lang);
+        let colorValue = colorMapped.value;
+        if (lang !== 'es') {
+            colorMapped.value = await this.translatorRepository.translate(colorMapped.value, lang);
+           colorValue = this.decodeHtml(colorMapped.value);
+        }
+
+        const resultados = await this.repository.frutasPorColor(colorValue, lang);
         this.resultadosColor.set(resultados);
+
         this.resultados.set([]); // limpia los resultados normales
         return;
       }
@@ -117,6 +162,7 @@ export class SearcherService {
       //VITAMINAC
       const vitCMap = this.vitaminCMapper.map(nombre);
       if (vitCMap) {
+
         // Llama al nuevo método del repositorio con el umbral detectado
         const resultados = await this.repository.frutasRicasEnVitaminaC(lang, vitCMap.value);
         this.resultados.set(resultados);

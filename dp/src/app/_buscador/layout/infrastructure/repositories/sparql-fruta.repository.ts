@@ -59,20 +59,24 @@ export class SparqlFrutaRepository implements FrutaRepository {
 
   private fusekiPorColor(color: string, lang: string): string {
     return `
-      PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+    PREFIX :   <http://www.mi-ontologia-frutas.org/ontologia#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-      SELECT ?fruit ?color ?prop ?val
-      WHERE {
-        ?fruit a :Fruta ;
-              :colorDeFruta ?color .
-        OPTIONAL { ?fruit :cantidadVitaminaC ?vitaminaC . }
-        OPTIONAL { ?fruit :indiceORAC ?indiceORAC . }
+    SELECT ?fruit ?label ?color ?prop ?val
+    WHERE {
+      ?fruit   a          :Fruta ;
+               rdfs:label ?label ;
+               :colorDeFruta ?color .
 
-        ?fruit ?prop ?val .
+      OPTIONAL { ?fruit :cantidadVitaminaC ?vitaminaC . }
+      OPTIONAL { ?fruit :indiceORAC       ?indiceORAC . }
 
-        FILTER(lcase(str(?color)) = "${color}")
-      }
-    `;
+      ?fruit   ?prop      ?val .
+
+      FILTER( lang(?label) = "${lang}" )
+      FILTER( lcase(str(?color)) = "${color}" )
+    }
+  `;
   }
 
 
@@ -93,6 +97,7 @@ export class SparqlFrutaRepository implements FrutaRepository {
       ?fruit a :Fruta ;
              :cantidadVitaminaC ?val ;
              ?prop ?val .
+
       FILTER(?val >= ${umbral})
       VALUES ?prop { :cantidadVitaminaC :indiceORAC }
     }
@@ -123,7 +128,7 @@ private fusekiFrutasRicasEnIndiceORAC(lang: string, umbral: number): string {
   `;
 }
 
-  
+
   /* ====================== helpers ===================== */
   private async consultaFuseki(q: string) {
     return this.sendSparql(this.FUSEKI_URL, q) as Promise<SparqlJSON>;
@@ -137,28 +142,41 @@ private fusekiFrutasRicasEnIndiceORAC(lang: string, umbral: number): string {
 
   /* -------------------  consultas Fuseki ------------------- */
   private fusekiPorNombre(nombre: string, lang: string): string {
-    const esc = nombre.replace(/"/g, '\\"');            // escapar comillas
+    const esc = nombre;
     return `
       PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-      SELECT ?fruit ?prop ?val
-      WHERE {
-        ?fruit a :Fruta ;
-               :nombre "${esc}"@${lang} ;
-               ?prop ?val .
-        VALUES ?prop { :cantidadVitaminaC :indiceORAC }
-      }`;
+    SELECT ?fruit ?label ?prop ?val
+    WHERE {
+      # Enlazamos el label en una variable para poder seleccionarlo
+      ?fruit a :Fruta ;
+             rdfs:label ?label ;
+             ?prop ?val .
+
+      # Filtramos que ?label coincida exactamente con el literal en el idioma dado
+      FILTER( ?label = "${esc}"@${lang} )
+
+      # Y sólo queremos devolver estas dos propiedades, si existen
+      VALUES ?prop { :cantidadVitaminaC :indiceORAC }
+
+      # (Opcional) También podríamos filtrar que ?label realmente tenga ese idioma
+      FILTER(lang(?label) = "${lang}")
+    }`;
   }
 
-  private fusekiTodas(lang: string): string {
+  private fusekiTodas( lang: string): string {
     return `
       PREFIX : <http://www.mi-ontologia-frutas.org/ontologia#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-      SELECT ?fruit ?prop ?val
+      SELECT ?fruit ?label ?prop ?val
       WHERE {
         ?fruit a :Fruta ;
+        rdfs:label ?label ;
                ?prop ?val .
         VALUES ?prop { :cantidadVitaminaC :indiceORAC }
+        FILTER( lang(?label) = "${lang}" )
       }`;
   }
 
