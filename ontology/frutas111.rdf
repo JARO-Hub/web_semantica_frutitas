@@ -724,6 +724,7 @@
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Baya"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</cantidadVitaminaC>
+        <colorDeFruta>green</colorDeFruta>
         <esComestible>true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15300</indiceORAC>
         <rdfs:label xml:lang="en">Açaí_palm</rdfs:label>
@@ -863,6 +864,7 @@
         <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminC"/>
         <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Winter"/>
         <colorDeFruta>Pink</colorDeFruta>
+        <colorDeFruta>pink</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <saborDefruta>Candy</saborDefruta>
         <texturaDeFruta>Juicy</texturaDeFruta>
@@ -957,6 +959,8 @@
         <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Summer"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36</cantidadVitaminaC>
+        <colorDeFruta>green</colorDeFruta>
+        <colorDeFruta>yellow</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2823</indiceORAC>
         <nombreCientifico>Mangifera indica</nombreCientifico>
@@ -992,6 +996,7 @@
         <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminC"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</cantidadVitaminaC>
+        <colorDeFruta>yellowish</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4969</indiceORAC>
         <rdfs:label xml:lang="en">Papaya</rdfs:label>
@@ -1047,6 +1052,7 @@
         <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminC"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</cantidadVitaminaC>
+        <colorDeFruta>medium yellow</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2144</indiceORAC>
         <rdfs:label xml:lang="en">Pineapple</rdfs:label>
@@ -1135,6 +1141,7 @@
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
         <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</cantidadVitaminaC>
+        <colorDeFruta>Purpura</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9621</indiceORAC>
         <rdfs:label xml:lang="en">Vaccinium_corymbosum</rdfs:label>
