@@ -669,6 +669,30 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Agrume -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Agrume">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+        <rdfs:label xml:lang="fr">Agrume</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Ananas -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Ananas">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Bêta-carotène"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#vitamineC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48</cantidadVitaminaC>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2144</indiceORAC>
+        <rdfs:label xml:lang="fr">Ananas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Ananas_comosus -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Ananas_comosus">
@@ -683,6 +707,16 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Anthocyanine -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Anthocyanine">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxydant"/>
+        <rdfs:label xml:lang="fr">Anthocyanine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante">
@@ -692,11 +726,42 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Antioxydant -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Antioxydant">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+        <beneficio>capacité antioxydante</beneficio>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Antocianina -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Antocianina">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
         <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Automne -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Automne">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <duracionEnMes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</duracionEnMes>
+        <empiezaEnMes>août</empiezaEnMes>
+        <nombreEstacion>automne</nombreEstacion>
+        <terminaMes>novembre</terminaMes>
+        <rdfs:label xml:lang="fr">Automne</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Baie -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Baie">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+        <rdfs:label xml:lang="fr">Baie</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -714,6 +779,16 @@
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Betacaroteno">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Vitamina"/>
         <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Bêta-carotène -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Bêta-carotène">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Vitamina"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+        <rdfs:label xml:lang="fr">Bêta-carotène</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -779,6 +854,48 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Cocos_nucifera001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Cocos_nucifera001">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#été"/>
+        <colorDeFruta>marron</colorDeFruta>
+        <colorDeFruta>vert</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>doux</saborDefruta>
+        <saborDefruta>sucré</saborDefruta>
+        <texturaDeFruta>ferme</texturaDeFruta>
+        <texturaDeFruta>molle</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Confiture -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Confiture">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tiempoDeConservacion>3 mois</tiempoDeConservacion>
+        <tiempoDePreparacion>1 heure</tiempoDePreparacion>
+        <rdfs:label xml:lang="fr">Confiture</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Euterpe_oleracea -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Euterpe_oleracea">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Anthocyanine"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Baie"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</cantidadVitaminaC>
+        <colorDeFruta>violet</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15300</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#FortalecimientoDelSistemaInmunologico">
@@ -809,6 +926,70 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Fraise -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Fraise">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <contribuyeAl rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#RenforcementDuSystèmeImmunitaire"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Confiture"/>
+        <colorDeFruta>rouge</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>doux</saborDefruta>
+        <texturaDeFruta>tendre</texturaDeFruta>
+        <tieneMineral>calcium</tieneMineral>
+        <tieneMineral>potassium</tieneMineral>
+        <tieneVitamina>a</tieneVitamina>
+        <tieneVitamina>c</tieneVitamina>
+        <rdfs:label xml:lang="fr">Fraise</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Fruit_de_la_passion -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Fruit_de_la_passion">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#polyphénol"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#vitamineC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</cantidadVitaminaC>
+        <colorDeFruta>jaune</colorDeFruta>
+        <esComestible>true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1823</indiceORAC>
+        <saborDefruta>amère</saborDefruta>
+        <texturaDeFruta>doux</texturaDeFruta>
+        <rdfs:label xml:lang="fr">Fruit_de_la_passion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Goyavier -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Goyavier">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Confiture"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Hiver"/>
+        <colorDeFruta>rouge</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>doux</saborDefruta>
+        <texturaDeFruta>juteux</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Hiver -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Hiver">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <duracionEnMes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</duracionEnMes>
+        <empiezaEnMes>juin</empiezaEnMes>
+        <terminaMes>Hiver</terminaMes>
+        <terminaMes>juillet</terminaMes>
+        <rdfs:label xml:lang="fr">Hiver</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Invierno -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Invierno">
@@ -826,6 +1007,16 @@
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Licopeno">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
         <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Lycopène -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Lycopène">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxydant"/>
+        <rdfs:label xml:lang="fr">Lycopène</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -855,6 +1046,7 @@
         <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Verano"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36</cantidadVitaminaC>
+        <colorDeFruta>amarillo</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2823</indiceORAC>
         <nombreCientifico>Mangifera Indica</nombreCientifico>
@@ -864,6 +1056,43 @@
         <tieneMineral>potasio</tieneMineral>
         <tieneVitamina>c</tieneVitamina>
         <tieneVitamina>e</tieneVitamina>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Mangue -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Mangue">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <contribuyeAl rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#RenforcementDuSystèmeImmunitaire"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Confiture"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Bêta-carotène"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#vitamineC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36</cantidadVitaminaC>
+        <colorDeFruta>jaune</colorDeFruta>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2823</indiceORAC>
+        <texturaDeFruta>douce</texturaDeFruta>
+        <texturaDeFruta>juteuse</texturaDeFruta>
+        <tieneMineral>magnésium</tieneMineral>
+        <tieneMineral>potassium</tieneMineral>
+        <tieneVitamina>c</tieneVitamina>
+        <tieneVitamina>e</tieneVitamina>
+        <rdfs:label xml:lang="fr">Mangue</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Myrtille -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Myrtille">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</cantidadVitaminaC>
+        <colorDeFruta>violet</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9621</indiceORAC>
+        <saborDefruta>doux</saborDefruta>
+        <rdfs:label xml:lang="fr">Myrtille</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -880,6 +1109,25 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Papaye -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Papaye">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Confiture"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Lycopène"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#vitamineC"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
+        <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</cantidadVitaminaC>
+        <colorDeFruta>orange</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4969</indiceORAC>
+        <texturaDeFruta>juteuse</texturaDeFruta>
+        <texturaDeFruta>sucré</texturaDeFruta>
+        <rdfs:label xml:lang="fr">Papaye</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Passiflora_edulis -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Passiflora_edulis">
@@ -888,8 +1136,10 @@
         <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#VitaminaC"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</cantidadVitaminaC>
+        <colorDeFruta>amarillo</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1823</indiceORAC>
+        <saborDefruta>amarga</saborDefruta>
     </owl:NamedIndividual>
     
 
@@ -902,11 +1152,42 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Poire -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Poire">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <tienePropiedad rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#vitamineC"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Hiver"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Pépin"/>
+        <colorDeFruta>vert</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>sucré</saborDefruta>
+        <texturaDeFruta>juteux</texturaDeFruta>
+        <rdfs:label xml:lang="fr">Poire</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#PolifenolX -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#PolifenolX">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
         <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#AntiOxidante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pomme -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pomme">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Confiture"/>
+        <tieneTemporada rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Automne"/>
+        <colorDeFruta>rouge</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>sucré</saborDefruta>
+        <texturaDeFruta>croquant</texturaDeFruta>
+        <rdfs:label xml:lang="fr">Pomme</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -926,6 +1207,15 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Pépin -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Pépin">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#TipoDeFruto"/>
+        <rdfs:label xml:lang="fr">Pépin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#RefuerzoInmunologico -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#RefuerzoInmunologico">
@@ -935,10 +1225,29 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#RenforcementDuSystèmeImmunitaire -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#RenforcementDuSystèmeImmunitaire">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#BeneficioSalud"/>
+        <beneficio>renforce le système immunitaire</beneficio>
+        <rdfs:label xml:lang="fr">RenforcementDuSystèmeImmunitaire</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#Rutaceae -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Rutaceae">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Rutacées -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Rutacées">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Familia"/>
+        <rdfs:label xml:lang="fr">Rutacées</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -970,8 +1279,10 @@
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Vaccinium_corymbosum">
         <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</cantidadVitaminaC>
+        <colorDeFruta>morado</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9621</indiceORAC>
+        <saborDefruta>dulce</saborDefruta>
     </owl:NamedIndividual>
     
 
@@ -1007,6 +1318,16 @@
     
 
 
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#polyphénol -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#polyphénol">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxidante"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Antioxydant"/>
+        <rdfs:label xml:lang="fr">polyphénol</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.mi-ontologia-frutas.org/ontologia#uterpe_oleracea -->
 
     <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#uterpe_oleracea">
@@ -1015,8 +1336,32 @@
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Baya"/>
         <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Tropical"/>
         <cantidadVitaminaC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</cantidadVitaminaC>
+        <colorDeFruta>morado</colorDeFruta>
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <indiceORAC rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15300</indiceORAC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#vitamineC -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#vitamineC">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Vitamina"/>
+        <induceBeneficio rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#RefuerzoInmunologico"/>
+        <rdfs:label xml:lang="fr">vitamineC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#été -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#été">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Estacion"/>
+        <duracionEnMes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</duracionEnMes>
+        <empiezaEnMes>décembre</empiezaEnMes>
+        <nombreEstacion>été</nombreEstacion>
+        <terminaMes>mars</terminaMes>
+        <rdfs:label xml:lang="fr">été</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1032,6 +1377,28 @@
         <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
         <saborDefruta>dulce</saborDefruta>
         <texturaDeFruta>jugosa</texturaDeFruta>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.mi-ontologia-frutas.org/ontologia#Orange_(fruit) -->
+
+    <owl:NamedIndividual rdf:about="http://www.mi-ontologia-frutas.org/ontologia#Orange_(fruit)">
+        <rdf:type rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Fruta"/>
+        <contribuyeAl rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#RenforcementDuSystèmeImmunitaire"/>
+        <esUsadaEn rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Confiture"/>
+        <perteneceFamilia rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Rutacées"/>
+        <tieneTipoDeFruta rdf:resource="http://www.mi-ontologia-frutas.org/ontologia#Agrume"/>
+        <colorDeFruta>orange vif</colorDeFruta>
+        <esComestible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</esComestible>
+        <saborDefruta>légèrement acide</saborDefruta>
+        <saborDefruta>sucré</saborDefruta>
+        <texturaDeFruta>juteuse</texturaDeFruta>
+        <tieneMineral>calcium</tieneMineral>
+        <tieneMineral>magnésium</tieneMineral>
+        <tieneMineral>potassium</tieneMineral>
+        <tieneVitamina>a</tieneVitamina>
+        <rdfs:label xml:lang="fr">Orange_(fruit)</rdfs:label>
     </owl:NamedIndividual>
     
 
