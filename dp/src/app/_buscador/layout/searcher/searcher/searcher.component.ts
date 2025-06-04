@@ -23,6 +23,7 @@ export class SearcherComponent implements OnInit {
   headerCSSClasses: string;
   query = '';
   @ViewChild('searchBtn', { static: false }) searchBtn!: ElementRef<HTMLButtonElement>;
+  @ViewChild('ktHeader', { static: false }) title!: ElementRef<HTMLInputElement>;
   public currentLang: Signal<'en' | 'es' | 'de' | 'fr'>;
   queryText = '';
   lang: 'es'|'en'|'de'|'fr' = 'es';
@@ -67,6 +68,7 @@ export class SearcherComponent implements OnInit {
     const chosen = selectElem.value as 'en' | 'es' | 'de' | 'fr';
     this.changeLang(chosen);
     this.query = '';
+
     if (this.searchBtn && this.searchBtn.nativeElement) {
       this.searchBtn.nativeElement.classList.add('d-none');
     }
@@ -118,6 +120,15 @@ export class SearcherComponent implements OnInit {
     this.asideCSSClasses = this.layout.getStringCSSClasses('aside');
 
 
+  }
+
+  changeTitle(ktHeader: ElementRef, lang: string): void {
+    let title = ktHeader.nativeElement.querySelector('#kt-header__title');
+    if (title) {
+      title.textContent = this.i18n.translateSearcher(title.textContent, lang as 'fr' | 'en' | 'es' | 'de');
+    } else {
+      console.warn('No se encontró el elemento de título en ktHeader');
+    }
   }
 
 }

@@ -2,7 +2,7 @@
   <ng-container *ngIf="showTitle">
     <!-- begin::Title -->
     <h1 class="text-gray-900 fw-bolder my-0 fs-2">
-      {{ title }}
+      {{ 'TITLE.NAME_SEARCHER' | translate }}
       <ng-container *ngIf="description$ | async as description">
         <ng-container *ngIf="showDescritption">
           <small class="text-muted fs-6 fw-normal ms-1">{{description}}</small>
@@ -19,11 +19,11 @@
         <ul class="breadcrumb fw-bold fs-base my-1">
           <li *ngFor="let bc of filteredBC(_bc)" class="breadcrumb-item"
             [ngClass]="{'text-gray-900': bc.isActive, 'text-muted': !bc.isActive}">
-            <a class="text-muted" [routerLink]="bc.path">
-              {{ bc.title }}
+            <a id="kt-header__title" class="text-muted" [routerLink]="bc.path">
+              {{ 'TITLE.NAME_SEARCHER' | translate }}
             </a>
           </li>
-          <li class="breadcrumb-item text-gray-900">{{ title }}</li>
+          <li class="breadcrumb-item text-gray-900">{{ 'TITLE.NAME_SEARCHER' | translate }}</li>
         </ul>
       </ng-container>
     </ng-container>

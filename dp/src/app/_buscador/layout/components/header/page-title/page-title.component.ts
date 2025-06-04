@@ -1,9 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, effect, OnDestroy, OnInit, Signal} from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { LayoutService } from '../../../core/layout.service';
 import { PageInfoService, PageLink } from '../../../core/page-info.service';
 import { RouterLink } from "@angular/router";
 import { AsyncPipe, NgClass, NgIf } from "@angular/common";
+import {TranslatePipe} from "@ngx-translate/core";
+import {TranslationService} from "../../../../../modules/i18n";
 
 @Component({
   selector: "app-page-title",
@@ -12,7 +14,8 @@ import { AsyncPipe, NgClass, NgIf } from "@angular/common";
     RouterLink,
     NgClass,
     NgIf,
-    AsyncPipe
+    AsyncPipe,
+    TranslatePipe
   ]
 })
 export class PageTitleComponent implements OnInit, OnDestroy {
@@ -25,11 +28,18 @@ export class PageTitleComponent implements OnInit, OnDestroy {
   bc$: Observable<Array<PageLink>>;
   pageTitleCssClass: string = '';
   pageTitleDirection: string = 'row';
+  public currentLang: Signal<'en' | 'es' | 'de' | 'fr'>;
 
   constructor(
     private pageInfo: PageInfoService,
-    private layout: LayoutService
-  ) {}
+    private layout: LayoutService,
+    private i18n: TranslationService
+  ) {
+    this.currentLang = this.i18n.langSignal;
+    effect(() => {
+      console.log("Idioma cambiado a:", this.currentLang());
+    });
+  }
 
   ngOnInit(): void {
     this.title$ = this.pageInfo.title.asObservable();

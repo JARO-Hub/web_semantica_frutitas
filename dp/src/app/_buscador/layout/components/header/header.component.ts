@@ -32,7 +32,7 @@ import {TranslationService} from "../../../../modules/i18n";
     InlineSVGModule,
     TopbarComponent,
     TranslatePipe
-  ]
+  ],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   headerContainerCssClasses: string = '';

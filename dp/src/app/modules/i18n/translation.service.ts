@@ -92,9 +92,16 @@ export class TranslationService {
   }
 
 
-  translateSearcher(input: string){
-    // Translate a single string
-    return this.translate.instant(input);
+  translateSearcher(input: string, lang: 'en' | 'es' | 'de' | 'fr'): string {
+    if (!input) {
+      return '';
+    }
+    const translation = this.translate.instant(input);
+    if (translation === input) {
+      console.warn(`No translation found for "${input}" in language "${lang}"`);
+      return input; // Return the original input if no translation is found
+    }
+    return translation;
   }
 
 }
