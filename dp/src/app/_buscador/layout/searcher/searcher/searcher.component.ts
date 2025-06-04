@@ -19,6 +19,7 @@ import {locale as frLang} from "../../../../modules/i18n/vocabs/fr";
   templateUrl: "./searcher.component.html",
   styleUrls: ["./searcher.component.scss"],
 })
+
 export class SearcherComponent implements OnInit {
   headerCSSClasses: string;
   query = '';
@@ -61,6 +62,10 @@ export class SearcherComponent implements OnInit {
     effect(() => {
       console.log("Idioma cambiado a:", this.currentLang());
     });
+    // Hacemos una busqueda inicial
+    this.withLoading(() =>
+      this.searcher.buscar('', this.lang)
+    );
   }
 
   async onLangChange(event: Event) {
@@ -118,9 +123,9 @@ export class SearcherComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.asideDisplay = this.layout.getProp('aside.display') as boolean;
     this.asideCSSClasses = this.layout.getStringCSSClasses('aside');
-
 
   }
 

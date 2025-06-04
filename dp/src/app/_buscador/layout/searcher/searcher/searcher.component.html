@@ -8,9 +8,9 @@
               data-kt-sticky-name="header">
   </app-header>
 
-<div class="card-body">
+<div class="card-body container fs-md-6">
 
-    <div class="search-controls">
+    <div class="search-controls fs-md-4">
       <input
         type="text"
         [(ngModel)]="query"
@@ -18,7 +18,7 @@
         placeholder="{{ 'SEARCH.INPUT_PLACEHOLDER' | translate }}"
       />
       <select
-        class="form-select other-value-select mw-md-100"
+        class="form-select other-value-select mw-md-100 fs-md-4"
         data-control="select2"
         data-hide-search="true"
         data-placeholder=""
@@ -32,7 +32,7 @@
       </select>
       <button
         #searchBtn
-        class="btn btn-primary "
+        class="btn btn-primary fs-md-4 "
         (click)="onSearch()"
       >
         {{ 'SEARCH.BUTTON' | translate }}

@@ -8,6 +8,7 @@ $primary: #3699FF;
 $input-bg: #F3F6F9;
 $border-radius: 0.75rem;
 
+
 .form-select {
   display: block;
   width: 100%;
@@ -28,6 +29,7 @@ $border-radius: 0.75rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   appearance: none;
 }
+
 
 select.select2-hidden-accessible.other-value-select{
   display: block;
@@ -90,7 +92,7 @@ select.select2-hidden-accessible.other-value-select{
         border: 1px solid #E4E6EF;
         border-radius: 0.5rem;
         padding: 0.5rem 0.75rem;
-        width: 800px;
+        width: 500px;
         transition: border-color 0.2s;
 
         &:focus {
@@ -152,3 +154,42 @@ select.select2-hidden-accessible.other-value-select{
     }
   }
 }
+/* Responsive adjustments md */
+@media ( max-width:768px ) {
+
+  .fs-md-4{
+    font-size: 1.1rem!important;
+  }
+  .card-header {
+    padding: 0.5rem 1rem;
+    text-align: center;
+
+    .logo-header {
+      justify-content: center;
+    }
+
+    .logo-img {
+      height: 40px;
+    }
+
+    .card-title-custom {
+      font-size: 2.5rem!important;
+      margin-left: 0;
+    }
+  }
+
+  .card-body {
+    padding: 0.5rem 1rem;
+
+    .search-controls {
+      flex-direction: column;
+      align-items: stretch;
+
+      .form-control, .form-select, .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+

@@ -8,9 +8,9 @@
         {{ f.abstract || '—' }}
        </p>
 
-       <button 
-       *ngIf="(f.abstract?.length ?? 0) > 150" 
-       (click)="toggleExpand(i)" 
+       <button
+       *ngIf="(f.abstract?.length ?? 0) > 150"
+       (click)="toggleExpand(i)"
        class="btn-toggle link">
        {{ isExpanded(i) ? 'Menos' : 'Más' }}
        </button>

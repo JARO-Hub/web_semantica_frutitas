@@ -35,6 +35,12 @@ $border-radius: 0.75rem;
       font-family: 'Arial Black', 'Segoe UI Black', 'Impact', sans-serif;
       margin-left: 0.5rem;
     }
+    .fs-md-4 {
+      font-size: 1.5rem!important;
+    }
+    .fs-md-6{
+      font-size: 1.1rem!important;
+    }
 
   }
 
@@ -43,6 +49,10 @@ $border-radius: 0.75rem;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     padding: 1rem 1.5rem;
+
+    .fs-md-6 {
+      font-size: 1.1rem;
+    }
 
     app-responses {
       display: block;
