@@ -1,47 +1,52 @@
 <!-- searcher.component.html -->
-<div class="card card-flush">
-  <div class="card-header logo-header">
-  <img
-    src="assets/media/logos/naranjapad.png"
-    alt="Frutology Logo"
-    class="logo-img"
-  />
-    <h3 class="card-title m-0">
-      {{
-        lang ==='es' ? 'FRUTOLOGÍA':
-        lang ==='en' ? 'FRUITOLOGY':
-        lang ==='de' ? 'FRUCHTOLOGIE':
-        lang ==='fr' ? 'FRUTOLOGIE':
-        'FRUTOLOGÍA'
-      }}
-    </h3>
-  </div>
+<div class=" card card-flush">
+  <!--app-aside *ngIf="asideDisplay" id="kt_aside" class="aside aside-extended" [ngClass]="asideCSSClasses"
+      data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}"
+      data-kt-drawer-overlay="true" data-kt-drawer-width="auto" data-kt-drawer-direction="end"
+      data-kt-drawer-toggle="#kt_aside_toggle"></app-aside-->
+  <app-header id="kt_header" class="header" [ngClass]="headerCSSClasses" #ktHeader data-kt-sticky="true"
+              data-kt-sticky-name="header">
+  </app-header>
 
 <div class="card-body">
 
     <div class="search-controls">
       <input
+        type="text"
         [(ngModel)]="query"
-        class="form-control form-control-solid"
-        placeholder="Buscar fruta"
+        class="form-control form-control-flush"
+        placeholder="{{ 'SEARCH.INPUT_PLACEHOLDER' | translate }}"
       />
-      <select [(ngModel)]="lang" class=" form-select form-select-solid">
-        <option value="es">Español</option>
+      <select
+        class="form-select other-value-select mw-md-100"
+        data-control="select2"
+        data-hide-search="true"
+        data-placeholder=""
+        id="language-select"
+        (change)="onLangChange($event)"
+        [value]="currentLang()"
+      >
         <option value="en">English</option>
-        <option value="de">Alemán</option>
-        <option value="fr">Francés</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
       </select>
-      <button class="btn btn-primary" (click)="onSearch()">
-        {{ 
-          lang === 'es' ? 'Buscar' :
-          lang === 'en' ? 'Search' :
-          lang === 'de' ? 'Suchen' :
-          lang === 'fr' ? 'Chercher' :
-          'Buscar'
-        }} 
+      <button
+        #searchBtn
+        class="btn btn-primary "
+        (click)="onSearch()"
+      >
+        {{ 'SEARCH.BUTTON' | translate }}
       </button>
-      <div *ngIf="isLoading()">Cargando...</div>
-      <div *ngIf="error()" class="text-danger">{{ error() }}</div>
+
+      <div class="text-dark" *ngIf="isLoading()">
+        <button type="button" class="btn btn-primary" data-kt-indicator="on">
+            <span class="indicator-progress d-flex">
+            <div class="row d-flex" *ngIf="isLoading()">{{ 'SEARCH.LOADING' | translate }}</div>
+            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+        </span>
+          </button>
+      </div>
+      <div *ngIf="error()">{{ error() }}</div>
     </div>
   </div>
   <div class="card-body">

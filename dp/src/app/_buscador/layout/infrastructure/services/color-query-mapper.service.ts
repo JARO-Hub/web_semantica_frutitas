@@ -33,10 +33,12 @@ export class ColorQueryMapperService {
       .trim();
   }
 
+
+
   /**
    * Detecta si el input contiene un color válido, ignorando palabras como "fruta(s)"
    */
-  map(input: string): { type: 'color'; value: string } | null {
+  map(input: string, lang = 'es'): { type: 'color'; value: string } | null {
     const limpio = this.limpiarInput(input);
     const palabras = limpio.split(' ');
 

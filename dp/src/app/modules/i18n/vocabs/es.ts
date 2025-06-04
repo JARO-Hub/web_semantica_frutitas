@@ -100,6 +100,14 @@ export const locale = {
           ADD_MESSAGE: 'Customer has been created'
         }
       }
+    },
+    TITLE: {
+      NAME_SEARCHER: 'FRUTOLOGÍA'
+    },
+    SEARCH:{
+      INPUT_PLACEHOLDER: 'Buscar...',
+      BUTTON: 'Buscar',
+      LOADING: 'Cargando...',
     }
   }
 };

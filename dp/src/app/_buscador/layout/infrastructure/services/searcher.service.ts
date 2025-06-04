@@ -106,7 +106,7 @@ export class SearcherService {
 
     try {
       // Paso 1: detectar si la búsqueda es por color
-      const colorMapped = this.colorMapper.map(nombre);
+      const colorMapped = this.colorMapper.map(nombre, lang);
       if (colorMapped) {
         const resultados = await this.repository.frutasPorColor(colorMapped.value, lang);
         this.resultadosColor.set(resultados);
@@ -130,7 +130,7 @@ export class SearcherService {
         this.resultadosColor.set(null);
         return;
       }
-      
+
 
       // Paso 2: búsqueda tradicional por nombre
       let frutas = await this.repository.buscarPorNombre(nombre.trim(), lang);

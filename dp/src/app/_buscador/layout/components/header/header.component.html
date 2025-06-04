@@ -6,18 +6,28 @@
     data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}"></app-page-title>
 
   <!-- begin::Wrapper -->
-  <div class="d-flex d-lg-none align-items-center ms-n2 me-2">
+  <div class="d-flex  d-lg-none align-items-center ms-n2 me-2">
     <!--begin::Aside mobile toggle-->
     <div class="aside-toggle btn btn-icon btn-active-icon-primary" id="kt_aside_toggle">
       <span [inlineSVG]="'./assets/media/icons/duotune/abstract/abs015.svg'" class="svg-icon svg-icon-1"></span>
     </div>
     <!--end::Aside mobile toggle-->
     <!--begin::Logo-->
-    <a routerLink="/dashboard" class="d-flex align-items-center">
-      <img alt="Logo" src="./assets/media/logos/demo7.svg" class="h-30px" />
-    </a>
+
+    <div class="card-header logo-header">
+      <img
+        src="assets/media/logos/naranjapad.png"
+        alt="Logo"
+        class="logo-img h-50px h-lg-60px h-xxl-70px ms-2 ms-lg-5 ms-xxl-10"
+      />
+      <h3 class="card-title-custom m-0 fw-bolder">
+
+          {{ 'TITLE.NAME_SEARCHER' | translate }}
+
+      </h3>
+    </div>
     <!--end::Logo-->
   </div>
   <!-- end::Wrapper -->
-  <app-topbar class="d-flex flex-shrink-0"></app-topbar>
+  <!--app-topbar class="d-flex flex-shrink-0"></app-topbar-->
 </div>
