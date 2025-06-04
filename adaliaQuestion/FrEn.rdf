@@ -1,0 +1,614 @@
+PREFIX :          <http://www.mi-ontologia-frutas.org/ontologia#>
+PREFIX g:         <http://www.semanticweb.org/adalía/ontologies/2025/2/untitled-ontology-5/>
+PREFIX ontodebug: <http://ainf.aau.at/ontodebug#>
+PREFIX owl:       <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX swrl:      <http://www.w3.org/2003/11/swrl#>
+PREFIX swrla:     <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#>
+PREFIX swrlb:     <http://www.w3.org/2003/11/swrlb#>
+PREFIX xml:       <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:       <http://www.w3.org/2001/XMLSchema#>
+
+<http://www.mi-ontologia-frutas.org/ontologia>
+        rdf:type            owl:Ontology;
+        ontodebug:testCase  [ ontodebug:axiom  "Fruta EquivalentTo colorDeFruta value \"Verde\"";
+                              ontodebug:type   true
+                            ];
+        owl:imports         <http://www.mi-ontologia-frutas.org/ontologia> .
+
+ontodebug:testCase  rdf:type  owl:AnnotationProperty .
+
+ontodebug:axiom  rdf:type   owl:AnnotationProperty;
+        rdfs:subPropertyOf  ontodebug:testCase .
+
+ontodebug:type  rdf:type    owl:AnnotationProperty;
+        rdfs:subPropertyOf  ontodebug:testCase .
+
+swrla:isRuleEnabled  rdf:type  owl:AnnotationProperty .
+
+:contribuyeAl  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :PropiedadNutricional;
+        rdfs:range   :Fruta .
+
+:PropiedadNutricional
+        rdf:type  owl:Class .
+
+:Fruta  rdf:type             owl:Class;
+        owl:equivalentClass  [ rdf:type                  owl:Restriction;
+                               owl:onClass               :TipoDeFruto;
+                               owl:onProperty            :tieneTipoDeFruta;
+                               owl:qualifiedCardinality  "1"^^xsd:nonNegativeInteger
+                             ] .
+
+:esCategoriaDeFrutaDe
+        rdf:type            owl:ObjectProperty;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       :tieneTipoDeFruta .
+
+:tieneTipoDeFruta  rdf:type  owl:ObjectProperty , owl:InverseFunctionalProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :TipoDeFruto .
+
+:esEstacionDeMetodo  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Estacion;
+        rdfs:range   :MetodoDeCultivo .
+
+:Estacion  rdf:type  owl:Class .
+
+:MetodoDeCultivo  rdf:type  owl:Class .
+
+:esPreparadaCon  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Preparacion;
+        rdfs:range   :Fruta .
+
+:Preparacion  rdf:type  owl:Class .
+
+:esProductoraDe  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :SituacionGeografica;
+        rdfs:range   :Fruta .
+
+:SituacionGeografica  rdf:type  owl:Class .
+
+:esUsadaEn  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :Preparacion .
+
+:estaConformadaPor  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Familia;
+        rdfs:range   :Fruta .
+
+:Familia  rdf:type  owl:Class .
+
+:estaContenidaEn  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :PropiedadNutricional;
+        rdfs:range   :Fruta .
+
+:induceBeneficio  rdf:type  owl:ObjectProperty;
+        rdfs:domain         :PropiedadNutricional;
+        rdfs:range          :BeneficioSalud;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:BeneficioSalud  rdf:type  owl:Class .
+
+:perteneceFamilia  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :Familia .
+
+:produce  rdf:type   owl:ObjectProperty;
+        rdfs:domain  :MetodoDeCultivo;
+        rdfs:range   :Fruta .
+
+:producidaEn  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :SituacionGeografica .
+
+:seCultivaPor  rdf:type  owl:ObjectProperty , owl:FunctionalProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :MetodoDeCultivo .
+
+:seRealizaEnEstacion  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :MetodoDeCultivo;
+        rdfs:range   :Estacion .
+
+:tieneBeneficioSalud  rdf:type  owl:ObjectProperty;
+        rdfs:domain         :Fruta;
+        rdfs:range          :BeneficioSalud;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:tienePropiedad  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :PropiedadNutricional .
+
+:tieneTemporada  rdf:type  owl:ObjectProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   :Estacion .
+
+:TipoDeFruto  rdf:type  owl:Class .
+
+:altura_mts  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Altitud;
+        rdfs:range   xsd:float .
+
+:Altitud  rdf:type       owl:Class;
+        rdfs:subClassOf  :CondicionAmbiental .
+
+:beneficio  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :BeneficioSalud;
+        rdfs:range   xsd:string .
+
+:cantidadDePH  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Acido;
+        rdfs:range   xsd:float .
+
+:Acido  rdf:type         owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:cantidadVitamina  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   xsd:decimal .
+
+:cantidadVitaminaC  rdf:type  owl:DatatypeProperty;
+        rdfs:subPropertyOf  :cantidadVitamina .
+
+:colorDeFruta  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   xsd:string .
+
+:descripcionDeMetodoDeCultivo
+        rdf:type            owl:DatatypeProperty;
+        rdfs:domain         :MetodoDeCultivo;
+        rdfs:range          xsd:string;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:duracionEnMes  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Estacion;
+        rdfs:range   xsd:integer .
+
+:empiezaEnMes  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Estacion;
+        rdfs:range   xsd:string .
+
+:esComestible  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   xsd:boolean .
+
+:indiceORAC  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   xsd:integer .
+
+:nombreCientifico  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Familia;
+        rdfs:range   xsd:string .
+
+:nombreDeClima  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Clima;
+        rdfs:range   xsd:string .
+
+:Clima  rdf:type         owl:Class;
+        rdfs:subClassOf  :CondicionAmbiental .
+
+:nombreEstacion  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Estacion;
+        rdfs:range   xsd:string .
+
+:numeroIndiceGlucemico
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :Indice_glucemico;
+        rdfs:range   xsd:float .
+
+:Indice_glucemico  rdf:type  owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:saborDefruta  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   xsd:string .
+
+:terminaMes  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Estacion;
+        rdfs:range   xsd:string .
+
+:texturaDeFruta  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Fruta;
+        rdfs:range   xsd:string .
+
+:tiempoDeConservacion
+        rdf:type     owl:DatatypeProperty;
+        rdfs:domain  :Preparacion;
+        rdfs:range   xsd:string .
+
+:tiempoDePreparacion  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Preparacion;
+        rdfs:range   xsd:string .
+
+:tieneFlores  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Familia;
+        rdfs:range   xsd:boolean .
+
+:tieneHueso  rdf:type  owl:DatatypeProperty;
+        rdfs:range  xsd:boolean .
+
+:tieneMineral  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Mineral;
+        rdfs:range   xsd:string .
+
+:Mineral  rdf:type       owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:tienePulpa  rdf:type  owl:DatatypeProperty;
+        rdfs:range  xsd:boolean .
+
+:tieneVitamina  rdf:type  owl:DatatypeProperty;
+        rdfs:domain  :Vitamina;
+        rdfs:range   xsd:string .
+
+:Vitamina  rdf:type      owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:CondicionAmbiental  rdf:type  owl:Class;
+        rdfs:subClassOf  :SituacionGeografica .
+
+:Antioxidante  rdf:type  owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:Ciudad  rdf:type        owl:Class;
+        rdfs:subClassOf  :Pais .
+
+:Pais   rdf:type         owl:Class;
+        rdfs:subClassOf  :LocalizacionGeopolitica .
+
+:Continente  rdf:type    owl:Class;
+        rdfs:subClassOf  :LocalizacionGeopolitica .
+
+:LocalizacionGeopolitica
+        rdf:type         owl:Class;
+        rdfs:subClassOf  :SituacionGeografica .
+
+:Fibra  rdf:type         owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:Fitonutriente  rdf:type  owl:Class;
+        rdfs:subClassOf  :PropiedadNutricional .
+
+:Agrume  rdf:type   :TipoDeFruto , owl:NamedIndividual;
+        rdfs:label  "Agrume"@fr .
+
+:Ananas  rdf:type           :Fruta , owl:NamedIndividual;
+        rdfs:label          "Ananas"@fr , "Ananas"@es;
+        :cantidadVitaminaC  48.0 , 48.0;
+        :esComestible       true;
+        :indiceORAC         2144.0 , 2144.0;
+        :tienePropiedad     :Bêta-carotène , :vitamineC , :Betacaroteno , :VitaminaC;
+        :tieneTipoDeFruta   :Tropical .
+
+:Bêta-carotène  rdf:type  :Vitamina , owl:NamedIndividual;
+        rdfs:label        "Bêta-carotène"@fr;
+        :induceBeneficio  :AntiOxidante .
+
+:vitamineC  rdf:type      :Vitamina , owl:NamedIndividual;
+        rdfs:label        "vitamineC"@fr;
+        :induceBeneficio  :RefuerzoInmunologico .
+
+:Tropical  rdf:type  :TipoDeFruto , owl:NamedIndividual .
+
+:Ananas_comosus  :cantidadVitaminaC  48.0 , 48.0;
+        :indiceORAC         2144.0 , 2144.0 .
+
+:Betacaroteno  rdf:type   :Vitamina , owl:NamedIndividual;
+        :induceBeneficio  :AntiOxidante .
+
+:VitaminaC  rdf:type      :Vitamina , owl:NamedIndividual;
+        :induceBeneficio  :RefuerzoInmunologico .
+
+:Anthocyanine  rdf:type   :Antioxidante , owl:NamedIndividual;
+        rdfs:label        "Anthocyanine"@fr;
+        :induceBeneficio  :Antioxydant .
+
+:Antioxydant  rdf:type  :BeneficioSalud , owl:NamedIndividual;
+        :beneficio  "capacité antioxydante" .
+
+:AntiOxidante  rdf:type  :BeneficioSalud , owl:NamedIndividual;
+        :beneficio  "capacidad antioxidante" .
+
+:Antocianina  rdf:type    :Antioxidante , owl:NamedIndividual;
+        :induceBeneficio  :AntiOxidante .
+
+:Automne  rdf:type       :Estacion , owl:NamedIndividual;
+        rdfs:label       "Automne"@fr;
+        :duracionEnMes   3.0 , 3.0;
+        :empiezaEnMes    "août";
+        :nombreEstacion  "automne";
+        :terminaMes      "novembre" .
+
+:Baie   rdf:type    :TipoDeFruto , owl:NamedIndividual;
+        rdfs:label  "Baie"@fr .
+
+:Baya   rdf:type  :TipoDeFruto , owl:NamedIndividual .
+
+:Carica_papaya  :cantidadVitaminaC  60.0 , 60.0;
+        :indiceORAC         4969.0 , 4969.0 .
+
+:mermelada  rdf:type           :Preparacion , owl:NamedIndividual;
+        :tiempoDeConservacion  "3 meses";
+        :tiempoDePreparacion   "1 hora" .
+
+:Licopeno  rdf:type       :Antioxidante , owl:NamedIndividual;
+        :induceBeneficio  :AntiOxidante .
+
+:Citrico  rdf:type  :TipoDeFruto , owl:NamedIndividual .
+
+:FortalecimientoDelSistemaInmunologico
+        rdf:type        :PropiedadNutricional , owl:NamedIndividual;
+        :tieneMineral   "magnesio" , "hierro" , "zinc";
+        :tieneVitamina  "c" .
+
+:Rutaceae  rdf:type  :Familia , owl:NamedIndividual .
+
+:Cocos_nucifera  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label       "Cocos_nucifera"@es;
+        :colorDeFruta    "marron" , "verde";
+        :esComestible    true;
+        :saborDefruta    "dulce" , "suave";
+        :texturaDeFruta  "blanda" , "firme";
+        :tieneTemporada  :Verano .
+
+:Verano  rdf:type        :Estacion , owl:NamedIndividual;
+        :duracionEnMes   3.0 , 3.0;
+        :empiezaEnMes    "Diciembre";
+        :nombreEstacion  "Verano";
+        :terminaMes      "Marzo" .
+
+:Cocos_nucifera001  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label       "Cocos_nucifera001"@fr;
+        :colorDeFruta    "marron" , "vert";
+        :esComestible    true;
+        :saborDefruta    "doux" , "sucré";
+        :texturaDeFruta  "ferme" , "molle";
+        :tieneTemporada  :été .
+
+:été    rdf:type         :Estacion , owl:NamedIndividual;
+        rdfs:label       "été"@fr;
+        :duracionEnMes   3.0 , 3.0;
+        :empiezaEnMes    "décembre";
+        :nombreEstacion  "été";
+        :terminaMes      "mars" .
+
+:Confiture  rdf:type           :Fruta , owl:NamedIndividual;
+        rdfs:label             "Confiture"@fr;
+        :tiempoDeConservacion  "3 mois";
+        :tiempoDePreparacion   "1 heure" .
+
+:Euterpe_oleracea  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label          "Euterpe_oleracea"@fr , "Euterpe_oleracea"@es;
+        :cantidadVitaminaC  9.0 , 9.0;
+        :colorDeFruta       "violet" , "morado";
+        :esComestible       true;
+        :indiceORAC         15300.0 , 15300.0;
+        :tienePropiedad     :Anthocyanine , :Antocianina;
+        :tieneTipoDeFruta   :Tropical , :Baie , :Baya .
+
+:RenforcementDuSystèmeImmunitaire
+        rdf:type    :BeneficioSalud , owl:NamedIndividual;
+        rdfs:label  "RenforcementDuSystèmeImmunitaire"@fr;
+        :beneficio  "renforce le système immunitaire" .
+
+:Fruit_de_la_passion  :cantidadVitaminaC
+                30.0 , 30.0;
+        :indiceORAC         1823.0 , 1823.0 .
+
+:polyphénol  rdf:type     :Antioxidante , owl:NamedIndividual;
+        rdfs:label        "polyphénol"@fr;
+        :induceBeneficio  :Antioxydant .
+
+:Hiver  rdf:type        :Estacion , owl:NamedIndividual;
+        rdfs:label      "Hiver"@fr;
+        :duracionEnMes  1.0 , 1.0;
+        :empiezaEnMes   "juin";
+        :terminaMes     "Hiver" , "juillet" .
+
+:Invierno  rdf:type      :Estacion , owl:NamedIndividual;
+        :duracionEnMes   1;
+        :empiezaEnMes    "Junio";
+        :nombreEstacion  "Invierno";
+        :terminaMes      "Julio" .
+
+:Lycopène  rdf:type       :Antioxidante , owl:NamedIndividual;
+        rdfs:label        "Lycopène"@fr;
+        :induceBeneficio  :Antioxydant .
+
+:Malus_domestica  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label       "Malus_domestica"@es , "Malus_domestica"@fr;
+        :colorDeFruta    "rojo" , "rouge";
+        :esComestible    true;
+        :esUsadaEn       :mermelada , :Confiture;
+        :saborDefruta    "dulce" , "sucré";
+        :texturaDeFruta  "crujiente" , "croquant";
+        :tieneTemporada  :Automne , :Otoño .
+
+:Otoño  rdf:type         :Estacion , owl:NamedIndividual;
+        :duracionEnMes   3;
+        :empiezaEnMes    "Agosto";
+        :nombreEstacion  "Otoño";
+        :terminaMes      "Noviembre" .
+
+:Mangifera_indica  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label          "Mangifera_indica"@es , "Mangifera_indica"@fr;
+        :cantidadVitaminaC  36.0 , 36.0;
+        :colorDeFruta       "jaune" , "amarillo";
+        :contribuyeAl       :FortalecimientoDelSistemaInmunologico , :RenforcementDuSystèmeImmunitaire;
+        :esComestible       true;
+        :esUsadaEn          :mermelada , :Confiture;
+        :indiceORAC         2823.0 , 2823.0;
+        :nombreCientifico   "Mangifera Indica";
+        :texturaDeFruta     "jugosa" , "suave" , "douce" , "juteuse";
+        :tieneMineral       "magnesio" , "potasio" , "potassium" , "magnésium";
+        :tienePropiedad     :Bêta-carotène , :vitamineC , :Betacaroteno , :VitaminaC;
+        :tieneTemporada     :Verano;
+        :tieneTipoDeFruta   :Tropical;
+        :tieneVitamina      "c" , "e" .
+
+:Mangue  :cantidadVitaminaC  36.0 , 36.0;
+        :indiceORAC         2823.0 , 2823.0 .
+
+:Myrtille  :cantidadVitaminaC  14.0 , 14.0;
+        :indiceORAC         9621.0 , 9621.0 .
+
+:Papaye  :cantidadVitaminaC  60.0 , 60.0;
+        :indiceORAC         4969.0 , 4969.0 .
+
+:Passiflora_edulis  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label          "Passiflora_edulis"@fr;
+        :cantidadVitaminaC  30.0 , 30.0;
+        :colorDeFruta       "jaune" , "amarillo";
+        :esComestible       "true" , true;
+        :indiceORAC         1823.0 , 1823.0;
+        :saborDefruta       "amère" , "amarga";
+        :texturaDeFruta     "doux";
+        :tienePropiedad     :vitamineC , :VitaminaC , :polyphénol , :PolifenolX;
+        :tieneTipoDeFruta   :Tropical .
+
+:PolifenolX  rdf:type     :Antioxidante , owl:NamedIndividual;
+        :induceBeneficio  :AntiOxidante .
+
+:Pepa   rdf:type  :TipoDeFruto , owl:NamedIndividual .
+
+:Pépin  rdf:type    :TipoDeFruto , owl:NamedIndividual;
+        rdfs:label  "Pépin"@fr .
+
+:Pyrus_communis  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label         "Pyrus_communis"@fr;
+        :colorDeFruta      "verde" , "vert";
+        :esComestible      true;
+        :saborDefruta      "dulce" , "sucré";
+        :texturaDeFruta    "jugosa" , "juteux";
+        :tienePropiedad    :vitamineC , :VitaminaC;
+        :tieneTemporada    :Hiver , :Invierno;
+        :tieneTipoDeFruta  :Pepa , :Pépin .
+
+:RefuerzoInmunologico
+        rdf:type    :BeneficioSalud , owl:NamedIndividual;
+        :beneficio  "fortalece sistema inmune" .
+
+:Rutacées  rdf:type  :Familia , owl:NamedIndividual;
+        rdfs:label  "Rutacées"@fr .
+
+:Vaccinium_corymbosum
+        rdf:type            :Fruta , owl:NamedIndividual;
+        rdfs:label          "Vaccinium_corymbosum"@fr;
+        :cantidadVitaminaC  14.0 , 14.0;
+        :colorDeFruta       "violet" , "morado";
+        :esComestible       true;
+        :indiceORAC         9621.0 , 9621.0;
+        :saborDefruta       "dulce" , "doux" .
+
+:uterpe_oleracea  :cantidadVitaminaC  9.0 , 9.0;
+        :indiceORAC         15300.0 , 15300.0 .
+
+<http://www.mi-ontologia-frutas.org/ontologia#Citrus_×_paradisi>
+        rdf:type           :Fruta , owl:NamedIndividual;
+        :colorDeFruta      "rosado";
+        :esComestible      true;
+        :perteneceFamilia  :Rutaceae;
+        :saborDefruta      "dulce";
+        :texturaDeFruta    "jugosa";
+        :tienePropiedad    :VitaminaC;
+        :tieneTemporada    :Invierno .
+
+<http://www.mi-ontologia-frutas.org/ontologia#Orange_(fruit)>
+        rdf:type           :Fruta , owl:NamedIndividual;
+        rdfs:label         "Orange_(fruit)"@fr;
+        :colorDeFruta      "orange vif";
+        :contribuyeAl      :RenforcementDuSystèmeImmunitaire;
+        :esComestible      true;
+        :esUsadaEn         :Confiture;
+        :perteneceFamilia  :Rutacées;
+        :saborDefruta      "sucré" , "légèrement acide";
+        :texturaDeFruta    "juteuse";
+        :tieneMineral      "calcium" , "potassium" , "magnésium";
+        :tieneTipoDeFruta  :Agrume;
+        :tieneVitamina     "a" .
+
+g:f     rdf:type  swrl:Variable .
+
+g:n     rdf:type  swrl:Variable .
+
+g:b     rdf:type  swrl:Variable .
+
+:Carica  rdf:type           :Fruta , owl:NamedIndividual;
+        rdfs:label          "Carica"@es , "Carica"@fr;
+        :cantidadVitaminaC  60.0;
+        :colorDeFruta       "orange";
+        :esComestible       true;
+        :esUsadaEn          :mermelada , :Confiture;
+        :indiceORAC         4969.0;
+        :texturaDeFruta     "sucré" , "juteuse";
+        :tienePropiedad     :vitamineC , :VitaminaC , :Licopeno , :Lycopène;
+        :tieneTipoDeFruta   :Tropical .
+
+:Citrus  rdf:type          :Fruta , owl:NamedIndividual;
+        rdfs:label         "Citrus"@es;
+        :colorDeFruta      "naranja vibrante";
+        :contribuyeAl      :FortalecimientoDelSistemaInmunologico;
+        :esComestible      true;
+        :esUsadaEn         :mermelada;
+        :perteneceFamilia  :Rutaceae;
+        :saborDefruta      "dulce" , "ligeramente acido";
+        :texturaDeFruta    "jugosa";
+        :tieneMineral      "calcio" , "magnesio" , "potasio";
+        :tieneTipoDeFruta  :Citrico;
+        :tieneVitamina     "a" , "c" .
+
+:Fragaria  rdf:type      :Fruta , owl:NamedIndividual;
+        rdfs:label       "Fragaria"@es , "Fragaria"@fr;
+        :colorDeFruta    "rojo" , "rouge";
+        :contribuyeAl    :FortalecimientoDelSistemaInmunologico , :RenforcementDuSystèmeImmunitaire;
+        :esComestible    true;
+        :esUsadaEn       :mermelada , :Confiture;
+        :saborDefruta    "dulce" , "suave" , "doux";
+        :texturaDeFruta  "tendre";
+        :tieneMineral    "calcio" , "potasio" , "calcium" , "potassium";
+        :tieneVitamina   "a" , "c" .
+
+:Psidium_guajava  rdf:type  :Fruta , owl:NamedIndividual;
+        rdfs:label       "Psidium_guajava"@fr , "Pyrus_communis"@es;
+        :colorDeFruta    "rojo" , "rouge";
+        :esComestible    true;
+        :esUsadaEn       :mermelada , :Confiture;
+        :saborDefruta    "dulce" , "jugosa" , "doux";
+        :texturaDeFruta  "juteux";
+        :tieneTemporada  :Hiver , :Invierno .
+
+[ rdf:type             swrl:Imp;
+  rdfs:comment         "rule test";
+  rdfs:label           "rule_beneficios";
+  swrla:isRuleEnabled  true;
+  swrl:body            [ rdf:type   swrl:AtomList;
+                         rdf:first  [ rdf:type             swrl:ClassAtom;
+                                      swrl:argument1       g:f;
+                                      swrl:classPredicate  :Fruta
+                                    ];
+                         rdf:rest   [ rdf:type   swrl:AtomList;
+                                      rdf:first  [ rdf:type                swrl:IndividualPropertyAtom;
+                                                   swrl:argument1          g:f;
+                                                   swrl:argument2          g:n;
+                                                   swrl:propertyPredicate  :tienePropiedad
+                                                 ];
+                                      rdf:rest   [ rdf:type   swrl:AtomList;
+                                                   rdf:first  [ rdf:type                swrl:IndividualPropertyAtom;
+                                                                swrl:argument1          g:n;
+                                                                swrl:argument2          g:b;
+                                                                swrl:propertyPredicate  :induceBeneficio
+                                                              ];
+                                                   rdf:rest   ()
+                                                 ]
+                                    ]
+                       ];
+  swrl:head            [ rdf:type   swrl:AtomList;
+                         rdf:first  [ rdf:type                swrl:IndividualPropertyAtom;
+                                      swrl:argument1          g:f;
+                                      swrl:argument2          g:b;
+                                      swrl:propertyPredicate  :tieneBeneficioSalud
+                                    ];
+                         rdf:rest   ()
+                       ]
+] .
